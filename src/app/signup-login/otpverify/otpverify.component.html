@@ -1,0 +1,17 @@
+<div class="main">
+    <div class="card login-form p-3" >
+    <div class="card-body">
+    <h3 class="card-title">Create New Password</h3>
+    <div class="card-text">
+    <form [formGroup]="otpForm" (ngSubmit)="submit()">
+    <div class="form-group">
+    <input type="email" class="form-control form-control-sm mt-3" formControlName="otp" placeholder="Enter OTP">
+    <input type="email" class="form-control form-control-sm mt-3" formControlName="email" placeholder="Enter your Email Address">
+    <input type="email" class="form-control form-control-sm mt-3" formControlName="password" placeholder="New Password">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>

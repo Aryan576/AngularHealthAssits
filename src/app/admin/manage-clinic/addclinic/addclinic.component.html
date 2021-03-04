@@ -1,0 +1,85 @@
+
+    <div class="content">
+    <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+    <h4 class="page-title"><b>Add Clinic</b></h4>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+    <form [formGroup]="clinicForm" (ngSubmit)="submit()">
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Clinic Name</label>
+    <input class="form-control" type="text" formControlName="clinicname">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Clinic Timings</label>
+    <input class="form-control" type="text" formControlName="timing">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Phone No</label>
+    <input class="form-control" type="text" formControlName="phoneno">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Rating</label>
+    <input class="form-control" type="text" formControlName="rating">
+    </div>
+    </div>
+    
+    <br><br>
+    <div class="col-sm-12">
+    <div class="row">
+    <div class="col-sm-12">
+    <div class="form-group">
+    <label>Address</label>
+    <input type="text" class="form-control " formControlName="address">
+    </div>
+    
+    
+    <div class="form-group">
+    <label>About</label>
+    <input type="text" class="form-control " formControlName="about">
+    </div>
+    
+    </div>
+    
+    <div class="col-sm-6 col-md-6 col-lg-3">
+    <div class="form-group">
+    <label>City</label>
+    <select class="browser-default custom-select mb-4" formControlName="cityid">
+    <option value="" selected>Choose City</option>
+    <option *ngFor="let c of listcities" value="{{c.cityid}}">{{c.cityname}}</option>
+    </select>
+    </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3">
+    <div class="form-group">
+    <label>Pincode</label>
+    <input type="text" class="form-control" formControlName="pincode">
+    </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3">
+    
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="m-t-20 text-center">
+    <button type="submit" class="btn btn-primary submit-btn">Create Clinic</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    
+    

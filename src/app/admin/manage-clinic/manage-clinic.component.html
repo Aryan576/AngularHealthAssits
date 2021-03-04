@@ -1,0 +1,58 @@
+<div class="row">
+<div class="col-sm-12">
+
+  
+    <div class="col-sm-8 col-9 text-right m-b-20">
+      <a
+        [routerLink]="['../addclinic']"
+        class="btn btn-primary btn-rounded float-right"
+        ><i class="fa fa-plus"></i> Add Clinic
+      </a>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card-box">
+        <div class="card-block">
+          <div class="table-responsive">
+  <table *ngIf="listclinic" datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Timings</th>
+            <th>Address</th>
+            <th>Phone No</th>
+            
+          
+            <th>City</th>
+            <th>Pincode</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let p of listclinic">
+          <th scope="row">{{p.clinicid}}</th>
+          <td>{{p.clinicname}}</td>
+          <td>{{p.timing}}</td>
+          <td>{{p.address}}</td>
+          <td>{{p.phoneno}}</td>
+          
+          
+          <td>{{p.cityid}}</td>
+          <td>{{p.pincode}}</td>
+          <td><a class="dropdown-item" [routerLink]="['/admin/editpathology',p.pathologyid]"><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp; Edit</a> </td>
+           <td><a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_patient"><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp; Delete</a> </td>
+          
+        
+        </tr> 
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+

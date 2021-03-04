@@ -1,0 +1,88 @@
+ <div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-8 col-9 text-right m-b-20">
+      <a
+        [routerLink]="['../adddoctor']"
+        class="btn btn-primary btn-rounded float-right"
+        ><i class="fa fa-plus"></i> Add Doctor
+      </a>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <div class="card-block">
+       
+        <div class="table-responsive">
+          <table
+            *ngIf="doctorlist"
+            datatable
+            [dtOptions]="dtOptions"
+            class="row-border hover"
+          >
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>LastName</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of doctorlist">
+                <th scope="row">{{ p.userid }}</th>
+                <td>{{ p.firstname }}</td>
+                <td>{{ p.lastname }}</td>
+                <td>{{ p.gender }}</td>
+                <td>{{ p.email }}</td>
+                <td *ngIf="p.status" class="{{doctor.doctorStatus[p.status]}}" >{{doctor.doctorStatus[p.status]}} </td>
+
+                <td class="text-right">
+                  <div class="dropdown dropdown-action">
+                    <a
+                      href="#"
+                      class="action-icon dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-expanded="false"
+                      ><i class="fa fa-ellipsis-v"></i
+                    ></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a
+                        class="dropdown-item"
+                        [routerLink]="['/admin/editdoctor', p.userid]"
+                        ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
+                        Edit</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        (click)="delete(p.userid)"
+                        data-toggle="modal"
+                        data-target="#delete_patient"
+                        ><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp;
+                        Delete</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        [routerLink]="['/admin/doctorprofile', p.userid]"
+                        ><mdb-icon fas icon="file-alt"></mdb-icon> &nbsp;
+                        Get Details</a
+                      >
+                    
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"> </p-confirmDialog>
+

@@ -1,0 +1,235 @@
+
+    <div class="content">
+    <div class="row">
+    <div class="col-sm-7 col-6">
+    <h4 class="page-title">My Profile</h4>
+    </div>
+    
+   
+    </div>
+    <div class="card-box profile-header">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="profile-view">
+    <div class="profile-img-wrap">
+    <div class="profile-img">
+    <a href="#"><img class="avatar" src="assets/img/doctor-03.jpg" alt=""></a>
+    </div>
+    </div>
+    <div class="profile-basic">
+    <div class="row">
+    <div class="col-md-5">
+    <div class="profile-info-left"><br>
+    <h3 class="user-name m-t-0 mb-0">{{getDoctorUserId.firstname}}
+    {{getDoctorUserId.lastname}}</h3>
+    <br>
+    <div class="staff-id"> <b> Registration No :
+    </b>{{getDoctorUserId.registerationno}}</div>
+    
+    </div>
+    </div>
+    <div class="col-md-7">
+    <ul class="personal-info">
+    <li>
+    <span class="title">specialization :</span>
+    <span class="text"><a href="#">{{getDoctorUserId.specialization}}</a></span>
+    </li>
+    <li>
+    <span class="title">Email:</span>
+    <span class="text"><a href="#">{{getDoctorUserId.email}}</a></span>
+    </li>
+    <li>
+    <span class="title">Gender:</span>
+    <span class="text">{{getDoctorUserId.gender}}</span>
+    </li>
+    <li>
+    <!-- <span class="title">Registration No :</span>
+    <span class="text">abcdf4</span> -->
+    </li>
+    <li>
+    <span class="title">Experience:</span>
+    <span class="text">{{getDoctorUserId.experience}}</span>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="profile-tabs">
+    
+    
+    <div class="tab-content">
+    <div class="tab-pane show active" id="about-cont">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="card-box">
+    <h4 class="page-title"><b>About</b></h4>
+    <div class="experience-box">
+    <p>{{getDoctorUserId.about}}</p>
+    </div>
+    </div>
+    <div class="card-box mb-0">
+    <div class="row">
+    <div class="col-sm-4 col-3">
+    <h4 class="page-title"><b>List Clinic</b></h4>
+    </div>
+    <!-- <div class="col-sm-8 col-9 text-right m-b-20">
+    <a [routerLink]="['../adddoctor']" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Clinic</a>
+    </div> -->
+    <div class="col-sm-8 col-9 text-right m-b-20">
+    <button type="button" class="btn btn-primary btn-rounded float-right"
+    data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Assign
+    Clinic</button>
+    </div>
+    
+    <form [formGroup]="doctClinicForm" (ngSubmit)="submit()">
+    <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    
+    <div class="modal-content">
+    <div class="modal-header">
+    
+    <h4 class="modal-title"><b>Clinic Form</b></h4>
+    </div>
+    <div class="modal-body">
+    
+    <select class="browser-default custom-select mb-4" formControlName="clinicid">
+    <option value="" selected>Choose Clinic</option>
+    
+    <option *ngFor="let c of listclinic" value="{{c.clinicid}}">{{c.clinicname}}</option>
+    </select>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Monday Timimg</label>
+    <input class="form-control" type="text" formControlName="monday">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Tuesday Timimg</label>
+    <input class="form-control" type="text" formControlName="tuesday">
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Wednesday Timimg</label>
+    <input class="form-control" type="text" formControlName="wednesday">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Thrusday Timimg</label>
+    <input class="form-control" type="text" formControlName="thrusday">
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Friday Timimg</label>
+    <input class="form-control" type="text" formControlName="friday">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Saturday Timimg</label>
+    <input class="form-control" type="text" formControlName="saturday">
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Sunday Timimg</label>
+    <input class="form-control" type="text" formControlName="sunday">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Threshold</label>
+    <input class="form-control" type="text" formControlName="threshold">
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-toggle="modal"
+    data-dismiss="modal" data-target="#myModal">Close</button>
+    <button type="submit" value="submit" class="btn btn-primary"
+    data-toggle="modal" data-target="#myModal">Save</button>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </form>
+    
+    
+    </div>
+    <div class="experience-box">
+    <table *ngIf="listDoctClinic" datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+    <tr>
+    <!-- <th>ID</th> -->
+    <th>Clinic name</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thrusday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+    <th>Threshold</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dc of listDoctClinic">
+    <!-- <td>{{dc.doctclinicid}}</td> -->
+    <td>{{dc.clinicname}}</td>
+    <td>{{dc.mon}}</td>
+    <td>{{dc.tue}}</td>
+    <td>{{dc.wed}}</td>
+    <td>{{dc.thru}}</td>
+    <td>{{dc.fri}}</td>
+    <td>{{dc.sat}}</td>
+    <td>{{dc.sun}}</td>
+    <td>{{dc.threshold}}</td>
+    
+    
+    <td class="text-right">
+    <div class="dropdown dropdown-action">
+    <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+    <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item"><mdb-icon far icon="edit"></mdb-icon> &nbsp; Edit</a>
+    <a class="dropdown-item" data-toggle="modal" data-target="#delete_patient" (click)="delete(dc.doctclinicid)"><mdb-icon far icon="trash-alt"></mdb-icon> &nbsp; Delete</a>
+    </div>
+    </div>
+    </td>
+    
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- <div class="tab-pane" id="bottom-tab2">
+    Tab content 2
+    </div>
+    <div class="tab-pane" id="bottom-tab3">
+    Tab content 3
+    </div> -->
+    </div>
+    </div>
+    </div>
+   
+    <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>

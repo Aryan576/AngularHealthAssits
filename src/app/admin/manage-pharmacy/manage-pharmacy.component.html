@@ -1,0 +1,63 @@
+<div class="row">
+     <div class="col-sm-12">
+         
+         
+          <div class="col-sm-8 col-9 text-right m-b-20">
+          <a [routerLink]="['../addpharmacy']" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Pharmacy </a>
+          </div>
+          </div>
+</div>
+    
+<div class="row">
+     <div class="col-sm-12">
+       <div class="card-box">
+         <div class="card-block">
+          
+           <div class="table-responsive">
+          <table *ngIf="pharmacylist" datatable [dtOptions]="dtOptions" class="row-border hover">
+            <thead>
+            <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Timings</th>
+            <th>Address</th>
+            <th>Phone No</th>
+            <th>Rating</th>
+            <th>About</th>
+            <th>City</th>
+            <th>Pincode</th>
+            <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let p of pharmacylist">
+            <th scope="row">{{p.pharmacyid}}</th>
+            <td>{{p.pharmacyname}}</td>
+            <td>{{p.timing}}</td>
+            <td>{{p.address}}</td>
+            <td>{{p.phone}}</td>
+            <td>{{p.rating}}</td>
+            <td>{{p.about}}</td>
+            <td>{{p.cityname}}</td>
+            <td>{{p.pincode}}</td>
+            <td class="text-right">
+            <div class="dropdown dropdown-action">
+            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+            <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item"  [routerLink]="['/admin/editpharmacy',p.pharmacyid]"><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp; Edit</a>
+            <a class="dropdown-item" (click)="delete(p.pharmacyid)" data-toggle="modal" data-target="#delete_patient"><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp; Delete</a>
+            </div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"> </p-confirmDialog>
+
+

@@ -1,0 +1,75 @@
+<section>
+
+    <div class="container">
+    <div class="user signinBx">
+    <div class="imgBx">
+    <img
+    src="/assets/images/male dr 1.jpg"
+    alt=""
+    />
+    </div>
+    <div class="formBx">
+    <form  [formGroup]="loginForm" (ngSubmit)="login()" >
+    <h2>Sign In</h2>
+    <input type="text" formControlName="email" placeholder="Email Address" />
+    
+    <input type="password" formControlName="password" placeholder="Password" />
+    <input type="submit" value="Login" />
+   <a  routerLink="../resetpassword" class="signup">Reset Password</a>
+    <p class="signup">
+    Don't have an account ?
+    <a onclick="toggleForm();">Sign Up.</a>
+    </p>
+    </form>
+    </div>
+    </div>
+    <div class="user signupBx">
+    <div class="formBx">
+    <form  [formGroup]="signupForm" (ngSubmit)="signup()">
+        <h2>Join HealthAssist</h2>
+    <input type="text" formControlName="firstname" placeholder="First Name" />
+    <input type="text" formControlName="lastname" placeholder="Last Name" />
+    <input type="email" formControlName="email" placeholder="Email Address" />
+    <div class="div">
+    
+      <input pPassword type="password" placeholder="Password" formControlName="password"/>
+      
+     
+    </div>
+    <div class="row mt-2 ml-4">
+    <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" class="custom-control-input" id="defaultInline1" formControlName="gender" value="male" name="gender" mdbInput>
+    <label class="custom-control-label" for="defaultInline1">Male</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline ml-5">
+    <input type="radio" class="custom-control-input" id="defaultInline2" formControlName="gender" value="female" name="gender" mdbInput>
+    <label class="custom-control-label" for="defaultInline2">Female</label>
+    </div>
+    </div>
+    
+   
+    <input type="submit" value="Sign Up" />
+    <p class="signup">
+    Already have an account ?
+    <a onclick="toggleForm();">Sign in.</a>
+    </p>
+    </form>
+    </div>
+    <div class="imgBx">
+    <img
+    src="/assets/images/female dr.jpg"
+    alt=""
+    />
+    </div>
+    </div>
+    </div>
+    </section>
+    
+  
+  
+  
+  
+  
+  
+  
+  

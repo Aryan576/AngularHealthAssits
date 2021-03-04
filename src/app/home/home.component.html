@@ -1,0 +1,185 @@
+
+<div class="main">
+    <!--Navbar-->
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark" [containerInside]="false">
+  
+      <!-- Navbar brand -->
+      <mdb-navbar-brand ><a class="navbar-brand" [routerLink]="['']" routerLinkActive="router-link-active" >HealthAssist</a></mdb-navbar-brand>
+  
+      <!-- Collapsible content -->
+      <links>
+  
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link waves-light" mdbWavesEffect>Doctors<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Pathology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Pharmacy</a>
+          </li>
+  
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Basic dropdown<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+              <div class="divider dropdown-divider"></div>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+            </div>
+          </li>
+  
+        </ul>
+        <!-- Links -->
+  
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <!-- <li class="nav-item">
+          <a class="nav-link">
+          <mdb-icon fab icon="twitter"></mdb-icon>
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link">
+          <mdb-icon fab icon="google-plus"></mdb-icon>
+          </a>
+          </li> -->
+  
+  
+          <li class="nav-item active">
+            <a *ngIf="!islog"  class="nav-link waves-light" [routerLink]="['/signup-login']" routerLinkActive="router-link-active" mdbWavesEffect>Login / Signup<span class="sr-only">(current)</span></a>
+            <a *ngIf="islog"  class="nav-link waves-light" (click)="logout()" routerLinkActive="router-link-active" mdbWavesEffect>Logout<span class="sr-only">(current)</span></a>
+          </li>
+  
+  
+          <!-- <li class="nav-item">
+          <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+          <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+          <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+          </div>
+          </a>
+          </li> -->
+        </ul>
+      </links>
+      <!-- Collapsible content -->
+  
+    </mdb-navbar>
+    <!--/.Navbar-->
+  </div>
+  
+  
+
+<div class="c-full-slider js-full-slider">
+    <div class="p-slide js-slide is-active" style="background-image: url('/assets/images/header.jpg'); position: relative;">
+      <div class="p-slide-cont">
+        <h3>Slide One</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, veritatis?</p>
+      </div>
+    </div>
+  
+    <div class="p-slide js-slide" style="background-image: url('/assets/images/header1.jpg');">
+      <div class="p-slide-cont">
+        <h3>Slide Two</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, veritatis?</p>
+      </div>
+    </div>
+  
+    <div class="p-slide js-slide" style="background-image: url('/assets/images/header2.jpg');">
+      <div class="p-slide-cont">
+        <h3>Slide Three</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, veritatis?</p>
+      </div>
+    </div>
+  
+    <button type="button" class="p-slide-arrow is-prev js-slide-prev">&lt;</button>
+    <button type="button" class="p-slide-arrow is-next js-slide-next">&gt;</button>
+  </div>
+  
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col">
+        Hello
+      </div>
+      <div class="col">
+        Hello
+      </div>
+      <div class="col">
+        Hello
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+
+  <footer>
+    <nav class="footer-inner">
+      <section class="footer-item">
+        <h1>LOGO</h1>
+  
+        <h2>We create possibilities <br>for the connected world.<br><b class="color">Be Bold.</b></h2>
+      </section>
+  
+      <section class="footer-item">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Capabilities</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </section>
+  
+      <section class="footer-item">
+        <h3>Visit</h3>
+        <a href="#">
+          <p>Envoy So. California</p>
+          <p>34 Tesla, Ste 100</p>
+          <p>Irvine, Ca, USA 92618</p>
+        </a>
+  
+        <h3 class="desktop">New Business</h3>
+        <p class="desktop"><a href="#">engage@weareenvoy.com</a></p>
+        <p class="desktop"><a href="#">949.333.3106</a></p>
+      </section>
+  
+      <section class="footer-item">
+        <h3>New Business</h3>
+        <p><a href="#">Email us</a></p>
+        <p><a href="#">949.333.3106</a></p>
+      </section>
+  
+      <section class="footer-item">
+        <h3>Follow</h3>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </section>
+  
+      <section class="footer-item">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </section>
+  
+      <section class="footer-item">
+        <!-- <a href="#" class="footer-button">Next: About</a> -->
+      </section>
+    </nav>
+  </footer>
+  
+
+  

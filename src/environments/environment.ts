@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+   /* Base_URL: 'https://healthassist-springboot.herokuapp.com/'  */ 
+   Base_URL:'http://localhost:9987/' 
+  
+
 };
 
 /*
