@@ -1,0 +1,100 @@
+<section class="page-title bg-1">
+    <div class="overlay"></div>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="block text-center">
+    <span class="text-white"
+    style="font-size: 20px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+    Pharmacy Details</span>
+    <h1 class="text-capitalize mb-5 text-lg"
+    style="font-weight: 500;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+    {{listUserPathology.pathologyname}}</h1>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+    <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+    
+    <div class="section-title">
+    <p
+    style="color: #107eed; text-align: center; padding-top: 20px;font-weight: 700;font-size: 45px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+    About</p>
+    <hr style="width:5%; border-top:2px solid #107eed; border-bottom:none; text-align: center;">
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    </section>
+    
+    
+    <section class="section doctor-single">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-4 col-md-6">
+    
+    <mdb-card>
+    
+    
+    
+    <mdb-card-body>
+    
+    
+    <mdb-card-title>
+    <h4>Pharmacy Timings</h4>
+    <hr style="width:11%; border-top:5px solid #107eed; border-bottom:none;margin-left: -3px;">
+    </mdb-card-title>
+    
+    
+    <mdb-card-text>
+    <ul class="w-hours list-unstyled">
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#">Monday - Friday</a>
+    <span>{{listUserPathology.timing}}</span>
+    </li>
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#">Saturday</a>
+    <span>{{listUserPathology.timing}}</span>
+    </li>
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#">Sunday</a>
+    <span>Closed</span>
+    </li><br>
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#" style="font-size: large;">Need Urgent Help?</a>
+    <span></span>
+    </li>
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#" style="font-weight: 700;font-size: larger;">+{{listUserPathology.phoneno}}</a>
+    <span></span>
+    </li>
+    
+    </ul>
+    </mdb-card-text>
+    
+    
+    </mdb-card-body>
+    </mdb-card>
+    </div>
+    
+    <div class="col-lg-8 col-md-6">
+    <div class="doctor-details mt-4 mt-lg-0">
+    
+    <div class="divider my-4"></div>
+    
+    <p>
+    {{listUserPathology.about}}</p>
+    
+    <p class="text-md" style="font-weight: 500;font-size: large;"><b>Address:</b> {{listUserPathology.address}}, {{listUserPathology.cityname}}-{{listUserPathology.pincode}}</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+

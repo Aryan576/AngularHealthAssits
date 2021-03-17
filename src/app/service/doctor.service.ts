@@ -33,11 +33,17 @@ export class DoctorService {
 
     /* Doctorclinci */
 
-      DoctorClinic():Promise <any> {
+      DoctorClinic(userid:any):Promise <any> {
 
-        return this.http.get(`${environment.Base_URL}listDoctClinic`).toPromise();
+        return this.http.get(`${environment.Base_URL}listDoctClinic/${userid}`).toPromise();
 
       }
+
+      addDoctorclinic(model:any):Observable<any>{
+        return this.http.post(`${environment.Base_URL}Doctor_Clinic`,model);
+      }
+
+      
 
       /* Clinci */
 

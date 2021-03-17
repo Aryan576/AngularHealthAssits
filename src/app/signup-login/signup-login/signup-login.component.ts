@@ -72,6 +72,7 @@ export class SignupLoginComponent implements OnInit {
                 this.messageService.add({severity:'success', summary:'Login', detail:'Patient LogedIn'});
                
                 console.log(this.userData);
+                this.rut.navigate(['../patientHome'])
                 
               }
              

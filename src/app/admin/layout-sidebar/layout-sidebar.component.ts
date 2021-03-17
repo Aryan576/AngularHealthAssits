@@ -9,7 +9,7 @@ export class LayoutSidebarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }

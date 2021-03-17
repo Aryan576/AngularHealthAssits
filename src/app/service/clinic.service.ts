@@ -18,6 +18,16 @@ export class ClinicService {
   {
     return this.http.post(`${environment.Base_URL}addclinic`,model);
   }
+  getclinicByid(clinicid :any):Promise<any>{
+    return this.http.get(`${environment.Base_URL}getclinicById/${clinicid}`).toPromise();
+    }
+    updateclinic(model: any): Observable<any> {
+      return this.http.put(`${environment.Base_URL}updateClinic`, model);
+    }
+
+    deleteclinic(clinicid:any):Observable<any>{
+      return this.http.delete(`${environment.Base_URL}deleteClinic/${clinicid}`)
+    }
  
 
  

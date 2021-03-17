@@ -12,13 +12,13 @@
         <!-- Links -->
         <ul *ngIf="islog" class="navbar-nav mr-auto">
           <li class="nav-item ">
-            <a  [routerLink]="['../doctor']"    class="nav-link waves-light" mdbWavesEffect>Doctors<span class="sr-only">(current)</span></a>
+            <a  [routerLink]="['/patientHome/doctor']"    class="nav-link waves-light" mdbWavesEffect>Doctors<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-light" mdbWavesEffect>Pathology</a>
+            <a   [routerLink]="['/patientHome/pathology']"   class="nav-link waves-light" mdbWavesEffect>Pathology</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-light" mdbWavesEffect>Pharmacy</a>
+            <a  [routerLink]="['/patientHome/pharmacy']"class="nav-link waves-light" mdbWavesEffect>Pharmacy</a>
           </li>
   
           <!-- Dropdown -->
@@ -42,7 +42,21 @@
             <a *ngIf="!islog"  class="nav-link waves-light" [routerLink]="['/signup-login']" routerLinkActive="router-link-active" mdbWavesEffect>Login / Signup<span class="sr-only">(current)</span></a>
             <!-- <a *ngIf="islog"  class="nav-link waves-light" (click)="logout()" routerLinkActive="router-link-active" mdbWavesEffect>Logout<span class="sr-only">(current)</span></a> -->
           </li>
-        
+          <li *ngIf="islog" class="nav-item dropdown has-arrow">
+            <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                <span class="user-img">
+                    <img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
+                    <span class="status online"></span>
+                </span> &nbsp;
+                <span>{{userData.user.firstname}}<mdb-icon fas icon="caret-down"></mdb-icon></span>
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" [routerLink]="['./patientprofile']"><mdb-icon fas icon="user-alt"></mdb-icon>&nbsp;My Profile</a>
+                <a class="dropdown-item" href="edit-profile.html"><mdb-icon fas icon="user-edit"></mdb-icon>&nbsp;Edit Profile</a>
+                <!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
+                <a class="dropdown-item"  (click)="logout()"><mdb-icon fas icon="power-off"></mdb-icon>&nbsp;Logout</a>
+            </div>
+        </li>
   
         
         </ul>
@@ -54,47 +68,7 @@
   </div>
   
   
-
-<div class="c-full-slider js-full-slider">
-    <div class="p-slide js-slide is-active" style="background-image: url('/assets/images/header.jpg'); position: relative;">
-      <div class="p-slide-cont">
-        <h3>Slide One</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, veritatis?</p>
-      </div>
-    </div>
-  
-    <div class="p-slide js-slide" style="background-image: url('/assets/images/header1.jpg');">
-      <div class="p-slide-cont">
-        <h3>Slide Two</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, veritatis?</p>
-      </div>
-    </div>
-  
-    <div class="p-slide js-slide" style="background-image: url('/assets/images/header2.jpg');">
-      <div class="p-slide-cont">
-        <h3>Slide Three</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, veritatis?</p>
-      </div>
-    </div>
-  
-    <button type="button" class="p-slide-arrow is-prev js-slide-prev">&lt;</button>
-    <button type="button" class="p-slide-arrow is-next js-slide-next">&gt;</button>
-  </div>
-  
-  <div class="jumbotron">
-    <div class="row">
-      <div class="col">
-        Hello
-      </div>
-      <div class="col">
-        Hello
-      </div>
-      <div class="col">
-        Hello
-      </div>
-    </div>
-  </div>
-  <!-- Footer -->
+<router-outlet> </router-outlet>
 
   <footer>
     <nav class="footer-inner">
@@ -158,3 +132,4 @@
   
 
   
+

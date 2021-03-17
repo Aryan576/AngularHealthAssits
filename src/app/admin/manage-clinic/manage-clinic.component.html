@@ -43,8 +43,8 @@
           
           <td>{{p.cityid}}</td>
           <td>{{p.pincode}}</td>
-          <td><a class="dropdown-item" [routerLink]="['/admin/editpathology',p.pathologyid]"><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp; Edit</a> </td>
-           <td><a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_patient"><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp; Delete</a> </td>
+          <td><a class="dropdown-item" [routerLink]="['/admin/editclinic',p.clinicid]"><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp; Edit</a> </td>
+           <td><a class="dropdown-item" (click)="delete(p.clinicid)" data-toggle="modal" data-target="#delete_patient"><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp; Delete</a> </td>
           
         
         </tr> 
@@ -55,4 +55,5 @@
 </div>
 </div>
 </div>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
 

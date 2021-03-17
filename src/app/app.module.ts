@@ -18,6 +18,9 @@ import { AdminModule } from './admin/admin.module';
 import { DataTablesModule } from "angular-datatables";
 
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { PatientModule } from './patient/patient.module';
+import {RatingModule} from 'primeng/rating';
+
 
 
 
@@ -28,7 +31,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -40,8 +44,10 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     SignupLoginModule,
     DataTablesModule ,
     ConfirmDialogModule,
+    RatingModule,
     MDBBootstrapModule.forRoot(),
     AdminModule,
+    PatientModule,
 
     AppRoutingModule
   ],

@@ -4,6 +4,8 @@ import { AuthGuard } from '../auth.guard';
 import { AdminComponent } from './admin/admin.component';
 import { AddclinicComponent } from './manage-clinic/addclinic/addclinic.component';
 import { ManageClinicComponent } from './manage-clinic/manage-clinic.component';
+import { AdddietComponent } from './manage-diet/adddiet/adddiet.component';
+import { ManageDietComponent } from './manage-diet/manage-diet.component';
 import { AdddoctorComponent } from './manage-doctor/adddoctor/adddoctor.component';
 import { DoctorprofileComponent } from './manage-doctor/doctorprofile/doctorprofile.component';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
@@ -21,16 +23,20 @@ const routes: Routes = [
       {path:'pharmacy',component:ManagePharmacyComponent},
       {path:'pathology',component:ManagePathologyComponent},
       {path:'clinic',component:ManageClinicComponent},
+      {path:'diet',component:ManageDietComponent},
       {path:'addpathology',component:AddpathologyComponent},
       {path:'addpharmacy',component:AddpharmacyComponent},
       {path:'adddoctor',component:AdddoctorComponent},
       {path:'addclinic',component:AddclinicComponent},
+      {path:'adddiet',component:AdddietComponent},
       {path:'editpathology/:pathologyid',component:AddpathologyComponent},
       {path:'editpharmacy/:pharmacyid',component:AddpharmacyComponent},
       {path:'editdoctor/:userid',component:AdddoctorComponent},
       {path:'editclinic/:clinicid',component:AddclinicComponent},
-      {path:'doctorprofile/:userid',component:DoctorprofileComponent}
-    ]
+      {path:'doctorprofile/:userid',component:DoctorprofileComponent},
+      {path:'editclinic/:clinicid',component:AddclinicComponent},
+      {path:'editdiet/:dietid',component:AdddietComponent}
+    ],canActivate:[AuthGuard]
   }
 ];
 

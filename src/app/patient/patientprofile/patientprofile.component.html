@@ -1,0 +1,189 @@
+
+
+<div class="row">
+    <div class="col-sm-7 col-6">
+    <h4 class="page-title" style="font-size: 30px;"><b>My Profile</b></h4>
+    </div>
+    
+    <div class="col-sm-5 col-6 text-right m-b-30">
+    <a href="edit-profile.html" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i> Edit Profile</a>
+    </div>
+    </div>
+    <div class="card-box profile-header">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="profile-view">
+    <div class="profile-img-wrap">
+    <div class="profile-img">
+    <a href="#"><img class="avatar" src="assets/img/doctor-03.jpg" alt=""></a>
+    </div>
+    </div>
+    <div class="profile-basic">
+    <div class="row">
+    <div class="col-md-5">
+    <div class="profile-info-left"><br>
+    <h3 class="user-name m-t-0 mb-0">
+    Patient Name</h3>
+    <!-- <small class="text-muted">specialization</small> --> <br>
+    <div class="staff-id"> <b> Email :
+    </b>a@a.com</div>
+    <!-- <div class="staff-msg"><a href="chat.html" class="btn btn-primary">Get Details</a></div> -->
+    </div>
+    </div>
+    <div class="col-md-7">
+    <ul class="personal-info">
+    <li>
+    <span class="title">Phone No :</span>
+    <span class="text"><a href="#">sssss</a></span>
+    </li>
+    <li>
+    <span class="title">Age:</span>
+    <span class="text"><a href="#">sss</a></span>
+    </li>
+    <li>
+    <span class="title">Gender:</span>
+    <span class="text">ssss</span>
+    </li>
+    <li>
+    <!-- <span class="title">Registration No :</span>
+    <span class="text">abcdf4</span> -->
+    </li>
+    <li>
+    <span class="title">City:</span>
+    <span class="text">ssss</span>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="profile-tabs">
+    
+    <div class="tab-content">
+    <div class="tab-pane show active" id="about-cont">
+    <div class="row">
+    <div class="col-md-12">
+    
+    <div class="card-box mb-0">
+    <div class="row">
+    <div class="col-sm-4 col-3">
+    <h4 class="page-title"><b>List Patient</b></h4>
+    </div>
+    
+    <div class="col-sm-8 col-9 text-right m-b-20">
+    <button type="button" class="btn btn-primary btn-rounded float-right"
+    data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add
+    Patient</button>
+    </div>
+    
+    <form>
+    <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    
+    <div class="modal-content">
+    <div class="modal-header">
+    
+    <h4 class="modal-title"><b>Patient Form</b></h4>
+    </div>
+    <div class="modal-body">
+    
+    <!-- <select class="browser-default custom-select mb-4">
+    <option value="" selected>Choose Clinic</option>
+    
+    <option *ngFor="let c of listclinic" value="{{c.clinicid}}">{{c.clinicname}}</option>
+    </select> -->
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>First Name</label>
+    <input class="form-control" type="text">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Last Name</label>
+    <input class="form-control" type="text">
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Email</label>
+    <input class="form-control" type="text">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Password</label>
+    <input class="form-control" type="text">
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    
+    
+    &nbsp;&nbsp;&nbsp; <label>Gender : </label>&nbsp;&nbsp;&nbsp;
+    <div class="custom-control custom-radio custom-control-inline">
+    
+    <input type="radio" class="custom-control-input" id="defaultInline1" value="male"
+    name="gender" mdbInput>
+    <label class="custom-control-label" for="defaultInline1">Male</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline ml-3">
+    <input type="radio" class="custom-control-input" id="defaultInline2" value="female"
+    name="gender" mdbInput>
+    <label class="custom-control-label" for="defaultInline2">Female</label>
+    </div>
+    
+    
+    </div>
+    
+    
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-toggle="modal"
+    data-dismiss="modal" data-target="#myModal">Close</button>
+    <button type="submit" value="submit" class="btn btn-primary"
+    data-toggle="modal" data-target="#myModal">Save</button>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </form>
+    
+    
+    </div>
+    <div class="experience-box">
+    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>First name</th>
+    <th>Last Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>City</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+  
+
+  

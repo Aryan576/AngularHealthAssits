@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h4 class="page-title"><b>Add Diet</b></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+
+<form [formGroup]="dietForm" (ngSubmit)="submit()">
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Diet Type</label>
+    <input class="form-control" type="text" formControlName="diettype">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Age Group</label>
+    <input class="form-control" type="text" formControlName="agegroup">
+    </div>
+    </div>
+    
+    
+    
+    
+    <br><br>
+    <div class="col-sm-12">
+    <div class="form-group">
+    <label>Diet Content</label>
+    <input type="text" class="form-control" formControlName="dietcontent">
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="m-t-20 text-center">
+    <button type="submit" class="btn btn-primary submit-btn">Create Diet</button>
+    </div>
+    </form>
+    </div>
+    </div>

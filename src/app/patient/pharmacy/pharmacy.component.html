@@ -1,0 +1,80 @@
+<section class="page-title bg-1">
+    <div class="overlay"></div>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="block text-center">
+    <span class="text-white"
+    style="font-size: 20px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">All
+    Pharmacy</span>
+    <h1 class="text-capitalize mb-5 text-lg"
+    style="font-weight: 500;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+    Pharmacy Details</h1>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+    <div class="container">
+    <p
+    style="color: #107eed; text-align: center; padding-top: 20px;font-weight: 700;font-size: 45px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+    Pharmacy</p>
+    <hr style="width:5%; border-top:2px solid #107eed; border-bottom:none; text-align: center;">
+    
+    
+    <div class="right" style="text-align: center;">
+    <p>It is easy to get a thousand prescriptions, but hard to get one single remedy.
+    Pharmacy who takes medicine and neglects diet wastes the skill of his doctors.
+    Always laugh when you can. It is cheap medicine.
+    </p>
+    </div>
+    
+    <div class="search">
+    <input type="text" class="searchTerm" placeholder="Search Pharmacy...">
+    <button type="submit" class="searchButton">
+    <i class="fa fa-search"></i>
+    </button>
+    </div><br>
+    </div>
+    <br><br>
+    
+    <div class="container">
+    <mdb-card *ngFor="let p of pharmacyList">
+    
+    
+    
+    <mdb-card-body>
+    
+    
+    <mdb-card-title>
+    <h4>{{p.pharmacyname}}</h4>
+    <hr style="width:8%; border-top:5px solid #107eed; border-bottom:none;margin-left: -3px;">
+    </mdb-card-title>
+    
+    
+    <mdb-card-text> <ul class="w-hours list-unstyled">
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#" style="font-size: larger;font-weight: 500;">Rating</a>
+    <span style="font-size: medium;">{{p.rating}}</span>
+    </li>
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#" style="font-size: larger;font-weight: 500;"></a>
+    <span style="font-size: medium;"><p-rating [cancel]="false"></p-rating></span>
+    </li><br>
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#" style="font-size: larger;font-weight: 500;">PhoneNo</a>
+    <span style="font-size: medium;">{{p.phoneno}}</span>
+    </li>
+    <li class="d-flex justify-content-between align-items-center">
+    <a href="#" style="font-size: larger;font-weight: 500;">Address</a>
+    <span style="font-size: medium;">{{p.address}}, {{p.cityname}}-{{p.pincode}}</span>
+    </li>
+    
+    </ul>
+    </mdb-card-text>
+    
+    <a [routerLink]="['/patientHome/singlepharmacy',p.pharmacyid]"><button type="button" mdbBtn color="primary" mdbWavesEffect>Learn More</button></a>
+    </mdb-card-body>
+    </mdb-card>
+    </div>

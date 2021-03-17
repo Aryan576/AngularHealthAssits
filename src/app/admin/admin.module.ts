@@ -21,6 +21,8 @@ import { AddclinicComponent } from './manage-clinic/addclinic/addclinic.componen
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DoctorprofileComponent } from './manage-doctor/doctorprofile/doctorprofile.component';
+import { ManageDietComponent } from './manage-diet/manage-diet.component';
+import { AdddietComponent } from './manage-diet/adddiet/adddiet.component';
 
 
 
@@ -28,7 +30,7 @@ import { DoctorprofileComponent } from './manage-doctor/doctorprofile/doctorprof
 
 
 @NgModule({
-  declarations: [AdminComponent, ManagePatientComponent, ManagePharmacyComponent, ManagePathologyComponent, ManageDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, AdddoctorComponent, AddpharmacyComponent, AddpathologyComponent, ManageClinicComponent, AddclinicComponent, DoctorprofileComponent],
+  declarations: [AdminComponent, ManagePatientComponent, ManagePharmacyComponent, ManagePathologyComponent, ManageDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, AdddoctorComponent, AddpharmacyComponent, AddpathologyComponent, ManageClinicComponent, AddclinicComponent, DoctorprofileComponent, ManageDietComponent, AdddietComponent],
   imports: [
     CommonModule,
     DataTablesModule,

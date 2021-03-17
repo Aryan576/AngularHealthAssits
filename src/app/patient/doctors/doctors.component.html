@@ -1,0 +1,83 @@
+<section class="page-title bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+  <div class="row">
+  <div class="col-md-12">
+  <div class="block text-center">
+  <span class="text-white"
+  style="font-size: 20px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">All
+  Doctors</span>
+  <h1 class="text-capitalize mb-5 text-lg"
+  style="font-weight: 500;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+  Specalized doctors</h1>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  <div class="container">
+  <p
+  style="color: #107eed; text-align: center; padding-top: 20px;font-weight: 700;font-size: 45px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+  Doctors</p>
+  <hr style="width:5%; border-top:2px solid #107eed; border-bottom:none; text-align: center;">
+  
+  
+  <div class="right" style="text-align: center;">
+  <p>The best doctor gives the least medicines.Sometimes, doctors risk their lives just save others.
+  A good doctor treats the disease, but the great doctor treats the patient who has the disease.
+  </p>
+  </div>
+  
+  <div class="search">
+  <input type="text" class="searchTerm" placeholder="Search Doctor...">
+  <button type="submit" class="searchButton">
+  <i class="fa fa-search"></i>
+  </button>
+  </div><br>
+  </div>
+  
+  
+  
+  <br><br>
+  <div class="container">
+  <div class="row">
+  <div class=" col-lg-3" *ngFor="let ud of userdoctor">
+  
+  <div class="card" style="width:100%">
+  
+  
+  <img src="/assets/images/doctorprofile.jpg" alt="Avatar" style="width:100%">
+  
+  
+  <div class="card-body">
+  
+  
+  <p style="font-size: 25px;font-weight: 400;">{{ud.firstname}}&nbsp;{{ud.lastname}}</p>
+  <p style="font-size: medium;">{{ud.specialization}}</p>
+  <!-- <p>{{ud.qualification}}</p> -->
+  
+  <a [routerLink]="['../singledoctor',ud.userid]"><button type="button" mdbBtn color="primary" style="float: right;" mdbWavesEffect>Read More</button></a>
+  
+  </div>
+  
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  
+  <section class="section cta-page" id="hero" class="d-flex flex-column justify-content-center">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-7">
+  <div class="cta-content">
+  <div class="divider mb-4"></div><br>
+  <hr style="width:8%; border-top:8px solid #107eed; border-bottom:none;margin-left: -3px;">
+  <h2 class="mb-5 text-lg" style="margin-top: 20px;font-weight: 600;">We are pleased to offer you the <span class="title-color">chance to have the healthy</span></h2>
+  <a [routerLink]="['/patientappointment']"><button ml-2 mdbBtn type="button" color="primary" rounded="true" mdbWavesEffect>Make Appointment<i class="icofont-simple-right ml-3"></i>></button></a>
+  
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
