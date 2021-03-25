@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { Pathology } from 'src/app/interface/pathology';
 import { PathologyService } from 'src/app/service/pathology.service';
 import { PharmacyService } from 'src/app/service/pharmacy.service';
 
@@ -12,9 +14,33 @@ import { PharmacyService } from 'src/app/service/pharmacy.service';
 export class ManagePathologyComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   listpathology:{}
-  constructor(private pathology:PathologyService,private confirmationService:ConfirmationService ,private rut:Router,private messageService: MessageService) { }
+  AssignUserPathology:{}
+  AssignUserPathologyForm:FormGroup;
+  PathologyData:Pathology
+  id=0
+
+
+  constructor(private route : ActivatedRoute,private pathology:PathologyService,private confirmationService:ConfirmationService ,private rut:Router,private messageService: MessageService) { }
 
   ngOnInit() {
+
+    this.pathology.getAssignUserPathology().then(res => {
+      this.AssignUserPathology = res.data;
+      
+    })
+    this.id=this.route.snapshot.params.pathologyid;
+
+    this.pathology.getpathologyByid(this.id).then(res => {
+      this.PathologyData=res.data;
+      
+      console.log("AssignUserPathology....  ",this.id);
+      this.AssignUserPathologyForm = new FormGroup({
+        pathologyid:new FormControl(this.PathologyData.pathologyid,Validators.required),
+        userid:new FormControl('',Validators.required)
+       
+      })
+   })
+
     this.dtOptions = {
       pagingType: 'full_numbers'
     };
@@ -29,6 +55,15 @@ export class ManagePathologyComponent implements OnInit {
     
     
   }
+
+
+    submit()
+    {
+      this.pathology.addUserPathology(this.AssignUserPathologyForm.value).subscribe(res => {
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: res.msg });
+        })
+    }
+
   delete(value){
     this.confirmationService.confirm({
       message: 'Are you sure that you want to proceed?',

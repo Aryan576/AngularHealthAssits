@@ -512,3 +512,39 @@ footer {
     color: #fff;
     margin-right: 10px;
   }
+
+  /* Drop down */
+  .dropdown .dropdown-menu {
+    position: absolute;
+    display: block;
+    background: #fff;
+    min-width: 280px;
+    top: 130%;
+    left: 0;
+    right: 0px;
+    opacity: 0;
+    padding: 0px;
+    visibility: hidden;
+    transition: all 0.3s ease-out 0s;
+    border: 0px;
+    border-top: 5px solid #009efb;
+    border-radius: 0px;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 115%;
+    }
+    
+    .dropdown .dropdown-item {
+    padding: 13px 20px;
+    border-bottom: 1px solid #eee;
+    background: transparent;
+    font-weight: 400;
+    color: #555;
+    }
+    
+    .dropdown .dropdown-item:hover {
+    color: #009efb;
+    }

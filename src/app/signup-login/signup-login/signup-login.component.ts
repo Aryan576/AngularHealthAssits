@@ -35,7 +35,7 @@ export class SignupLoginComponent implements OnInit {
           email:new FormControl('',Validators.required),
           password: new FormControl('',Validators.required),
           gender: new FormControl('',Validators.required),
-          roleId: new FormControl(4,Validators.required),
+          roleid: new FormControl(4,Validators.required),
          
       });
 
@@ -53,7 +53,8 @@ export class SignupLoginComponent implements OnInit {
               if(res.data.roleid ==1)
               {
                 this.messageService.add({severity:'success', summary:'Login', detail:'Doctor LogedIn'});
-                
+              
+                this.rut.navigate(['/doctorHome']);
 
               }else if(res.data.roleid ==2)
               {
@@ -64,7 +65,7 @@ export class SignupLoginComponent implements OnInit {
               else if(res.data.roleid ==3)
               {
                 this.messageService.add({severity:'success', summary:'Login', detail:'Pharmacy LogedIn'});
-                
+                this.rut.navigate(['../pharmacyHome'])
                
               }
               else if(res.data.roleid ==4)
@@ -78,6 +79,7 @@ export class SignupLoginComponent implements OnInit {
              
               else{
                 this.messageService.add({severity:'success', summary:'Login', detail:'Pathology LogedIn'});
+                this.rut.navigate(['../pathologyhome'])
                
               }
           

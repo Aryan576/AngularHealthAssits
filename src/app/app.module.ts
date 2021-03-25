@@ -20,6 +20,9 @@ import { DataTablesModule } from "angular-datatables";
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { PatientModule } from './patient/patient.module';
 import {RatingModule} from 'primeng/rating';
+import { PharmacyModule } from './pharmacy/pharmacy.module';
+import { PathologyModule } from './pathology/pathology.module';
+import { DoctorModule } from './doctor/doctor.module';
 
 
 
@@ -48,6 +51,9 @@ import {RatingModule} from 'primeng/rating';
     MDBBootstrapModule.forRoot(),
     AdminModule,
     PatientModule,
+    PharmacyModule,
+    PathologyModule,
+    DoctorModule,
 
     AppRoutingModule
   ],

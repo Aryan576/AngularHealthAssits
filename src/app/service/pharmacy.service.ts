@@ -31,4 +31,12 @@ export class PharmacyService {
       return this.http.delete(`${environment.Base_URL}deletepharmacy/${pharmacyid}`)
     }
 
+    addUserPharmacy(model :any):Observable<any> {
+      return this.http.post(`${environment.Base_URL}addUserPharmacy`,model);
+    }
+  
+   getAssignUserPharmacyByid():Promise<any> {
+      return this.http.get(`${environment.Base_URL}getAssignUserPharmacy`).toPromise();
+    }
+
 }

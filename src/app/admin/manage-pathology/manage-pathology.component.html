@@ -49,6 +49,10 @@
             
               <a class="dropdown-item" [routerLink]="['/admin/editpathology',p.pathologyid]"><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp; Edit</a>
              <a class="dropdown-item" (click)="delete(p.pathologyid)" data-toggle="modal" data-target="#delete_patient"><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp; Delete</a>
+            
+             <a class="dropdown-item" styleClass="p-mr-2"  data-toggle="modal" data-target="#myModal" [routerLink]="['/admin/assignuserpathology',p.pathologyid]"><mdb-icon fas icon="plus"></mdb-icon> &nbsp; Assign User</a>
+
+
             </div>
             </div>
          
@@ -62,6 +66,38 @@
 </div>
 </div>
 </div>
+
+<form [formGroup]="AssignUserPathologyForm" *ngIf="AssignUserPathologyForm" (ngSubmit)="submit()">
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+  
+  <div class="modal-content">
+  <div class="modal-header">
+  
+  <h4 class="modal-title"><b>User Pathology</b></h4>
+  </div>
+  <div class="modal-body">
+  
+  <div class="form-group">
+  <label>User Name</label>
+  <select class="browser-default custom-select mb-4" formControlName="userid">
+  <option value="" selected>Choose User</option>
+  <option *ngFor="let up of AssignUserPathology" value="{{up.userid}}">{{up.firstname}}</option>
+  </select>
+  </div>
+  
+  </div>
+  <div class="modal-footer">
+  <button type="button" class="btn btn-danger" data-toggle="modal"
+  data-dismiss="modal" data-target="#myModal">Close</button>
+  <button type="submit" value="submit" class="btn btn-primary" data-toggle="modal"
+  data-target="#myModal">Save</button>
+  </div>
+  </div>
+  
+  </div>
+  </div>
+  </form>
 <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"> </p-confirmDialog>
 
 

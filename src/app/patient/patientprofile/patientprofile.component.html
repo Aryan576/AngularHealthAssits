@@ -1,12 +1,12 @@
 
-
 <div class="row">
     <div class="col-sm-7 col-6">
     <h4 class="page-title" style="font-size: 30px;"><b>My Profile</b></h4>
     </div>
     
     <div class="col-sm-5 col-6 text-right m-b-30">
-    <a href="edit-profile.html" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i> Edit Profile</a>
+    <a [routerLink]="['/editpatientprofile']" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i>
+    Edit Profile</a>
     </div>
     </div>
     <div class="card-box profile-header">
@@ -23,45 +23,24 @@
     <div class="col-md-5">
     <div class="profile-info-left"><br>
     <h3 class="user-name m-t-0 mb-0">
-    Patient Name</h3>
-    <!-- <small class="text-muted">specialization</small> --> <br>
+    {{userdataservice.user.firstname}}&nbsp;{{userdataservice.user.lastname}}</h3>
+    <small class="text-muted"
+    style="font-size: 15px;">{{userdataservice.user.gender}}</small> <br>
     <div class="staff-id"> <b> Email :
-    </b>a@a.com</div>
-    <!-- <div class="staff-msg"><a href="chat.html" class="btn btn-primary">Get Details</a></div> -->
+    </b>{{userdataservice.user.email}}</div>
+    <br><br>
     </div>
     </div>
-    <div class="col-md-7">
-    <ul class="personal-info">
-    <li>
-    <span class="title">Phone No :</span>
-    <span class="text"><a href="#">sssss</a></span>
-    </li>
-    <li>
-    <span class="title">Age:</span>
-    <span class="text"><a href="#">sss</a></span>
-    </li>
-    <li>
-    <span class="title">Gender:</span>
-    <span class="text">ssss</span>
-    </li>
-    <li>
-    <!-- <span class="title">Registration No :</span>
-    <span class="text">abcdf4</span> -->
-    </li>
-    <li>
-    <span class="title">City:</span>
-    <span class="text">ssss</span>
-    </li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="profile-tabs">
     
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+<div class="profile-tabs">
+
     <div class="tab-content">
     <div class="tab-pane show active" id="about-cont">
     <div class="row">
@@ -79,7 +58,7 @@
     Patient</button>
     </div>
     
-    <form>
+    <form [formGroup]="patientForm" (ngSubmit)="submit()">
     <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
     
@@ -89,58 +68,59 @@
     <h4 class="modal-title"><b>Patient Form</b></h4>
     </div>
     <div class="modal-body">
-    
-    <!-- <select class="browser-default custom-select mb-4">
-    <option value="" selected>Choose Clinic</option>
-    
-    <option *ngFor="let c of listclinic" value="{{c.clinicid}}">{{c.clinicname}}</option>
-    </select> -->
     <div class="row">
-    <div class="col-sm-6">
+    
     <div class="form-group">
-    <label>First Name</label>
-    <input class="form-control" type="text">
+    <label>Patient Name</label>
+    <input class="form-control" type="text"
+    formControlName="patientname">
+    </div>
+    
+    
+    
+    <div class="row mt-2 ml-1">
+    <p>Gender : </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div
+    class="custom-control custom-radio custom-control-inline">
+    <input type="radio" class="custom-control-input"
+    id="defaultInline1" value="male" name="gender"
+    formControlName="gender" mdbInput>
+    <label class="custom-control-label"
+    for="defaultInline1">Male</label>
+    </div>
+    <div
+    class="custom-control custom-radio custom-control-inline ml-3">
+    <input type="radio" class="custom-control-input"
+    id="defaultInline2" value="female" name="gender"
+    formControlName="gender" mdbInput>
+    <label class="custom-control-label"
+    for="defaultInline2">Female</label>
     </div>
     </div>
-    <div class="col-sm-6">
+    
     <div class="form-group">
-    <label>Last Name</label>
-    <input class="form-control" type="text">
+    <label>Phone no</label>
+    <input class="form-control" type="text"
+    formControlName="phoneno">
     </div>
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-sm-6">
     <div class="form-group">
     <label>Email</label>
-    <input class="form-control" type="text">
+    <input class="form-control" type="text"
+    formControlName="email">
     </div>
-    </div>
-    <div class="col-sm-6">
+    
+    
     <div class="form-group">
-    <label>Password</label>
-    <input class="form-control" type="text">
-    </div>
-    </div>
-    </div>
-    <div class="row">
-    
-    
-    &nbsp;&nbsp;&nbsp; <label>Gender : </label>&nbsp;&nbsp;&nbsp;
-    <div class="custom-control custom-radio custom-control-inline">
-    
-    <input type="radio" class="custom-control-input" id="defaultInline1" value="male"
-    name="gender" mdbInput>
-    <label class="custom-control-label" for="defaultInline1">Male</label>
-    </div>
-    <div class="custom-control custom-radio custom-control-inline ml-3">
-    <input type="radio" class="custom-control-input" id="defaultInline2" value="female"
-    name="gender" mdbInput>
-    <label class="custom-control-label" for="defaultInline2">Female</label>
+    <label>Age</label>
+    <input class="form-control" type="text"
+    formControlName="age">
     </div>
     
     
+    
     </div>
+    
+    
     
     
     </div>
@@ -159,19 +139,25 @@
     
     </div>
     <div class="experience-box">
-    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <table  datatable [dtOptions]="dtOptions" class="row-border hover">
     <thead>
     <tr>
-    <th>ID</th>
-    <th>First name</th>
-    <th>Last Name</th>
+    
+    <th>Patient name</th>
+    <th>Age</th>
+    <th>PhoneNo</th>
+  
     <th>Gender</th>
-    <th>Email</th>
-    <th>City</th>
     </tr>
     </thead>
     <tbody>
-    
+    <tr *ngFor="let up of listuserPatint">
+    <td>{{up.patientname}}</td>
+    <td>{{up.age}}</td>
+    <td>{{up.phoneno}}</td>
+
+    <td>{{up.gender}}</td>
+    </tr>
     </tbody>
     </table>
     </div>
@@ -181,9 +167,3 @@
     </div>
     </div>
     </div>
-
-
-
-  
-
-  

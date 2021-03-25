@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class DoctorService {
 
   public doctorStatus:any= {1:"ACTIVE", 2:"PENDING" , 3:"DISABLE" , 4:"PAUSE" ,5:"KYC_DOCTOR"};
+  public userRole:any= {1:"Admin", 2:"Patient" , 3:"Doctor" , 4:"Pharmacy" ,5:"Pathology"};
   constructor(private http:HttpClient) { }
   doctorlist():Promise<any>
   {
@@ -52,6 +53,17 @@ export class DoctorService {
 
         return this.http.get(`${environment.Base_URL}clinics`).toPromise();
 
+      }
+
+      /* Doctor Side panle */
+
+      listAppointmentUser(userid : any):Promise<any> {
+        return this.http.get(`${environment.Base_URL}ListAppointmentUser/${userid}`).toPromise();
+      }
+    
+      acceptrejectappointment(model :any):Observable<any> {
+        
+        return this.http.put(`${environment.Base_URL}accept_reject_appointment`,model)
       }
 
 

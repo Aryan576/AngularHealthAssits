@@ -11,8 +11,22 @@
   
         <!-- Links -->
         <ul *ngIf="islog" class="navbar-nav mr-auto">
-          <li class="nav-item ">
+         <!--  <li class="nav-item ">
+            
+            
             <a  [routerLink]="['/patientHome/doctor']"    class="nav-link waves-light" mdbWavesEffect>Doctors<span class="sr-only">(current)</span></a>
+            
+          
+          </li> -->
+
+          <li  class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">Doctors<mdb-icon fas icon="caret-down"></mdb-icon></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+              <li><a class="dropdown-item" [routerLink]="['/patientHome/doctor']">Doctors</a></li>
+  
+              <li><a class="dropdown-item" [routerLink]="['/patientHome/appointment']">Appoinment</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a   [routerLink]="['/patientHome/pathology']"   class="nav-link waves-light" mdbWavesEffect>Pathology</a>
@@ -22,17 +36,7 @@
           </li>
   
           <!-- Dropdown -->
-          <li class="nav-item dropdown" dropdown>
-            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-              Basic dropdown<span class="caret"></span></a>
-            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
-              <div class="divider dropdown-divider"></div>
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
-            </div>
-          </li>
+          
   
         </ul>
         <!-- Links -->

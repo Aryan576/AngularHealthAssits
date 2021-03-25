@@ -1,0 +1,113 @@
+
+<div class="main">
+    <!--Navbar-->
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark" [containerInside]="false">
+  
+      <!-- Navbar brand -->
+      <mdb-navbar-brand ><a class="navbar-brand" [routerLink]="['']" routerLinkActive="router-link-active" >HealthAssist</a></mdb-navbar-brand>
+  
+      <!-- Collapsible content -->
+      <links>
+  
+        
+        
+        
+  
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li class="nav-item active">
+            <a *ngIf="!islog"  class="nav-link waves-light" [routerLink]="['/signup-login']" routerLinkActive="router-link-active" mdbWavesEffect>Login / Signup<span class="sr-only">(current)</span></a>
+            <!-- <a *ngIf="islog"  class="nav-link waves-light" (click)="logout()" routerLinkActive="router-link-active" mdbWavesEffect>Logout<span class="sr-only">(current)</span></a> -->
+          </li>
+          <li *ngIf="islog" class="nav-item dropdown has-arrow">
+            <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                <span class="user-img">
+                    <img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
+                    <span class="status online"></span>
+                </span> &nbsp;
+                <span>{{userData.user.firstname}}<mdb-icon fas icon="caret-down"></mdb-icon></span>
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" [routerLink]="['./patientprofile']"><mdb-icon fas icon="user-alt"></mdb-icon>&nbsp;My Profile</a>
+                <a class="dropdown-item" href="edit-profile.html"><mdb-icon fas icon="user-edit"></mdb-icon>&nbsp;Edit Profile</a>
+                <!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
+                <a class="dropdown-item"  (click)="logout()"><mdb-icon fas icon="power-off"></mdb-icon>&nbsp;Logout</a>
+            </div>
+        </li>
+  
+        
+        </ul>
+      </links>
+      <!-- Collapsible content -->
+  
+    </mdb-navbar>
+    <!--/.Navbar-->
+  </div>
+  
+  
+<router-outlet> </router-outlet>
+
+  <footer>
+    <nav class="footer-inner">
+      <section class="footer-item">
+        <h1>LOGO</h1>
+  
+        <h2>We create possibilities <br>for the connected world.<br><b class="color">Be Bold.</b></h2>
+      </section>
+  
+      <section class="footer-item">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Capabilities</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </section>
+  
+      <section class="footer-item">
+        <h3>Visit</h3>
+        <a href="#">
+          <p>Envoy So. California</p>
+          <p>34 Tesla, Ste 100</p>
+          <p>Irvine, Ca, USA 92618</p>
+        </a>
+  
+        <h3 class="desktop">New Business</h3>
+        <p class="desktop"><a href="#">engage@weareenvoy.com</a></p>
+        <p class="desktop"><a href="#">949.333.3106</a></p>
+      </section>
+  
+      <section class="footer-item">
+        <h3>New Business</h3>
+        <p><a href="#">Email us</a></p>
+        <p><a href="#">949.333.3106</a></p>
+      </section>
+  
+      <section class="footer-item">
+        <h3>Follow</h3>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </section>
+  
+      <section class="footer-item">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </section>
+  
+      <section class="footer-item">
+        <!-- <a href="#" class="footer-button">Next: About</a> -->
+      </section>
+    </nav>
+  </footer>
+  
+
+  
+
+
+

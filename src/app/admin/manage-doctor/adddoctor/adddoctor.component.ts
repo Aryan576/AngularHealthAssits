@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { from } from 'rxjs';
 import { Doctor } from 'src/app/interface/doctor';
 import { DoctorService } from 'src/app/service/doctor.service';
 
@@ -15,7 +16,7 @@ doctorform:FormGroup
 id=0;
 doctordata:Doctor;
 
-  constructor(private route:ActivatedRoute,private rut:Router,private messageService: MessageService,private doct:DoctorService) { }
+  constructor(private route:ActivatedRoute,private rut:Router,private messageService: MessageService,public doct:DoctorService) { }
 
   ngOnInit(): void {
 
@@ -23,6 +24,8 @@ doctordata:Doctor;
     console.log(this.id);
     this.doct.getdoctorByid(this.id).then(res=>{
       this.doctordata=res.data
+      console.log(this.doctordata);
+      
       
       this.doctorform=new FormGroup({
         userid:new FormControl(this.doctordata.userid,Validators.required),
@@ -35,6 +38,7 @@ doctordata:Doctor;
         qualification:new FormControl(this.doctordata.qualification,Validators.required),
         specialization:new FormControl(this.doctordata.specialization,Validators.required),
         experience:new FormControl(this.doctordata.experience,Validators.required),
+        status:new FormControl(this.doctordata.status,Validators.required),
         about:new FormControl(this.doctordata.about,Validators.required),
         registerationno:new FormControl(this.doctordata.registerationno,Validators.required)
 

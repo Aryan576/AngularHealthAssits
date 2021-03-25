@@ -31,4 +31,28 @@ export class PathologyService {
     deletepathology(pathologyid:any):Observable<any>{
       return this.http.delete(`${environment.Base_URL}deletepathology/${pathologyid}`)
     }
+    addUserPathology(model :any):Observable<any> {
+      return this.http.post(`${environment.Base_URL}addUserPathology`,model);
+    }
+
+    getAssignUserPathology():Promise<any> {
+      return this.http.get(`${environment.Base_URL}getAssignUserPathology`).toPromise();
+    }
+
+
+
+    addAssignUserPathology(model :any):Observable<any> {
+      return this.http.post(`${environment.Base_URL}addAssignUserPathology`,model);
+    }
+
+    listcities():Promise <any> {
+      return this.http.get(`${environment.Base_URL}listCities`).toPromise();
+    }
+
+    listUserPathology(userid : any):Promise<any> {
+      return this.http.get(`${environment.Base_URL}listUserPathology/${userid}`).toPromise();
+    }
+  
+  
+   
 }

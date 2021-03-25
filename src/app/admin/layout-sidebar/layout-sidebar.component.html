@@ -23,14 +23,33 @@
     </li>
      
     <li>
-        <a [routerLink]="['/admin/clinic']"><mdb-icon class="fas fa-hospital-alt"></mdb-icon> <span>Clinic</span></a>
+        <a [routerLink]="['/admin/clinic']"><mdb-icon  fas icon="fas fa-hospital-alt"></mdb-icon> <span>Clinic</span></a>
         </li>
     
+        <li class="active">
+            <a [routerLink]="['/admin/users']"><mdb-icon fas icon="user-alt"></mdb-icon> <span>Users</span></a>
+        </li>
+
     <li>
     <a [routerLink]="['/admin/diet']"><mdb-icon fas icon="utensils"></mdb-icon> <span>Diet</span></a>
     </li>
     
-   
+    <li >
+        <a [routerLink]="['./medicine']">
+            <mdb-icon fas icon="pills"></mdb-icon> <span>Medicine</span>
+        </a>
+    </li>
+    <li>
+        <a [routerLink]="['./disease']">
+            <mdb-icon fas icon="splotch"></mdb-icon> <span>Disease</span>
+        </a>
+    </li>
+    <li>
+        <a [routerLink]="['./city']"><mdb-icon fas icon="city"></mdb-icon> <span>City</span></a>
+    </li>
+    <li>
+        <a [routerLink]="['./state']"><mdb-icon fas icon="map-marked-alt"></mdb-icon> <span>State</span></a>
+    </li>
     
     
     </ul>

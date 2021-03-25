@@ -34,12 +34,7 @@
               </div>
             </div>
 
-            <!-- <div class="col-sm-6">
-    <div class="form-group">
-    <label>Confirm Password</label>
-    <input class="form-control" type="password">
-    </div>
-    </div> -->
+          
 
             <div class="col-sm-6">
               <div class="row mt-2 ml-1">
@@ -100,18 +95,21 @@
                 <div class="col-sm-6 col-md-6 col-lg-3"></div>
               </div>
             </div>
-           <!--  <div class="col-sm-6">
+           
+
+            <div class="col-sm-6">
               <div class="form-group">
-                <label>Status</label>
-                <select class="browser-default custom-select mb-4">
-                  <option value="" selected>Choose status</option>
-                  <option value="1">Active</option>
-                  <option value="2">Pending</option>
-                  <option value="3">Disable</option>
-                  <option value="4">Pause</option>
-                </select>
+              <label>Status</label>
+              <select class="browser-default custom-select mb-4" formControlName="status">
+              <option value="-1">Choose Status</option>
+              <option value=1>{{doct.doctorStatus[1]}}</option>
+              <option value=2>{{doct.doctorStatus[2]}}</option>
+              <option value=3>{{doct.doctorStatus[3]}}</option>
+              <option value=4>{{doct.doctorStatus[4]}}</option>
+              <option value=5>{{doct.doctorStatus[5]}}</option>
+              </select>
               </div>
-            </div> -->
+              </div>
 
             <div class="col-sm-6">
               <div class="form-group">

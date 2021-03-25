@@ -1,0 +1,263 @@
+<section class="page-title bg-1">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block text-center">
+            <span
+              class="text-white"
+              style="
+                font-size: 20px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              "
+              >All Pathology</span
+            >
+            <h1
+              class="text-capitalize mb-5 text-lg"
+              style="
+                font-weight: 500;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              "
+            >
+              Pathology Details
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="container">
+    <p
+      style="
+        color: #107eed;
+        text-align: center;
+        padding-top: 20px;
+        font-weight: 700;
+        font-size: 45px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      "
+    >
+      Pathology
+    </p>
+    <hr
+      style="
+        width: 5%;
+        border-top: 2px solid #107eed;
+        border-bottom: none;
+        text-align: center;
+      "
+    />
+  
+    <div class="right" style="text-align: center">
+      <p>
+        Pathology is a relatively easy thing to discuss, health is very difficult.
+        This, of course, is one of the reasons why there is such a thing as the
+        sacred, and why the sacred is difficult to talk about, because the sacred
+        is peculiarly related to the healthy. One does not like to disturb the
+        sacred, for in general, to talk about something changes it, and perhaps
+        will turn it into a pathology.
+      </p>
+    </div>
+  
+    <button
+      type="button"
+      class="btn btn-primary btn-rounded"
+      data-toggle="modal"
+      data-target="#myModal"
+    >
+      <i class="fa fa-plus"></i> Add Pathology
+    </button>
+  
+    <div class="search" style="float: right">
+      <input type="text" class="searchTerm" placeholder="Search Pathology..." />
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <br />
+  </div>
+  <br /><br />
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-9 text-right m-b-20"></div>
+    </div>
+    <div class="tab-pane show active" id="about-cont">
+      <form  [formGroup]="pathologyForm" *ngIf="pathologyForm" (ngSubmit)="submit()">
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title"><b>Pathology Form</b></h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Pathology Name</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        formControlName="pathologyname"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Pathology Timings</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        formControlName="timing"
+                      />
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group">
+                  <label>Phone No</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    formControlName="phoneno"
+                  />
+                </div>
+  
+                <div class="form-group">
+                  <label>About</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="about"
+                  />
+                </div>
+  
+                <div class="form-group">
+                  <label>Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="address"
+                  />
+                </div>
+  
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>City</label>
+                      <select
+                        class="browser-default custom-select mb-4"
+                        formControlName="cityid"
+                      >
+                        <option value="" selected>Choose City</option>
+                        <option
+                          *ngFor="let c of listcities"
+                          value="{{ c.cityid }}"
+                        >
+                          {{ c.cityname }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Pincode</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="pincode"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-toggle="modal"
+                  data-dismiss="modal"
+                  data-target="#editmyModal"
+                >
+                  Close
+                </button>
+                <button
+                  type="submit"
+                 
+                  value="submit"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#editmyModal"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <mdb-card *ngFor="let up of listUserPathology">
+      <mdb-card-body>
+        <mdb-card-title>
+          <h4>{{ up.pathologyname }}</h4>
+          
+          <div
+            class="dropdown dropdown-action"
+            style="float: right; margin-top: -35px"
+          >
+            <a
+              href="#"
+              class="action-icon dropdown-toggle"
+              data-toggle="dropdown"
+              aria-expanded="false"
+              ><i class="fa fa-ellipsis-v"></i
+            ></a>
+            <button type="button" mdbBtn color="primary" style="float: right;margin-top: -35px;" [routerLink]="['/pathologyhome/edituserpharmacy',up.pathologyid]" data-toggle="modal" data-target="#myModal" mdbWavesEffect><mdb-icon fas icon="edit"></mdb-icon></button>
+          </div>
+          <hr
+            style="
+              width: 8%;
+              border-top: 5px solid #107eed;
+              border-bottom: none;
+              margin-left: -3px;
+            "
+          />
+        </mdb-card-title>
+  
+        <mdb-card-text>
+          <ul class="w-hours list-unstyled">
+            <li class="d-flex justify-content-between align-items-center">
+              <a href="#" style="font-size: larger; font-weight: 500">Rating</a>
+              <span style="font-size: medium">{{ up.rating }}</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center">
+              <a href="#" style="font-size: larger; font-weight: 500"></a>
+              <span style="font-size: medium">
+                <p-rating [cancel]="false"></p-rating>
+              </span>
+            </li>
+            <br />
+            <li class="d-flex justify-content-between align-items-center">
+              <a href="#" style="font-size: larger; font-weight: 500">PhoneNo</a>
+              <span style="font-size: medium">{{ up.phoneno }}</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center">
+              <a href="#" style="font-size: larger; font-weight: 500">Address</a>
+              <span style="font-size: medium">{{ up.address }}</span>
+            </li>
+          </ul>
+        </mdb-card-text>
+  
+        <a [routerLink]="['/pathologydetails', up.pathologyid]"
+          ><button type="button" mdbBtn color="primary" mdbWavesEffect>
+            Learn More
+          </button></a
+        >
+      </mdb-card-body>
+    </mdb-card>
+  </div>

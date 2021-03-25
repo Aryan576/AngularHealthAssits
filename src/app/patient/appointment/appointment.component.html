@@ -1,0 +1,98 @@
+<div class="container">
+
+    <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+    <h4 class="page-title" style="text-align: center;font-size: 30px;"><b> Book An Appoinment </b></h4>
+    
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+    <form [formGroup]="appointmentForm" (ngSubmit)="submit()">
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Doctor</label>
+    <select class="browser-default custom-select mb-4" formControlName="doctorid"
+    (change)="getClinicsByDoctId()">
+    <option value="" selected>Choose Doctor</option>
+    <option *ngFor="let d of listDoctor" value="{{d.userid}}">{{d.firstname}}&nbsp;{{d.lastname}} &nbsp; ||
+    &nbsp; {{d.specialization}}</option>
+    </select>
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Clinic</label>
+    <select class="browser-default custom-select mb-4" formControlName="clinicid">
+    <option value="" selected>Choose Clinic</option>
+    <option *ngFor="let c of listClinic" value="{{c.clinicid}}">{{c.clinicname}}</option>
+    </select>
+    </div>
+    </div>
+    <!-- <div class="col-sm-6">
+    <div class="form-group">
+    <label>Create Date</label>
+    <input class="form-control" type="text" formControlName="createdate" value="">
+    </div>
+    </div> -->
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Appoinment Date</label>
+    <input class="form-control" type="date" formControlName="appointMentDate">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Appoinment Time</label>
+    <input class="form-control" type="time" formControlName="appointMentTime">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Reference</label>
+    <input class="form-control" type="text" formControlName="reference">
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Patient</label>
+    <select class="browser-default custom-select mb-4" formControlName="patientid">
+    <option value="" selected>Choose Patient</option>
+    <option *ngFor="let up of listuserPatint" value="{{up.patientid}}">{{up.patientname}}</option>
+    </select>
+    </div>
+    </div>
+    
+    <br><br>
+    <div class="col-sm-12">
+    <div class="row">
+    <div class="col-sm-12">
+    <div class="form-group">
+    <label>Comment</label>
+    <input type="text" class="form-control" formControlName="comment">
+    </div>
+    
+    
+    <div class="form-group">
+    <label>Complain</label>
+    <input type="text" class="form-control" formControlName="complain">
+    </div>
+    
+    </div>
+    
+    
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="m-t-20 text-center">
+    <button type="submit" class="btn btn-primary submit-btn">Book Appointment</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    
+    </div>
+    <br><br><br><br><br>

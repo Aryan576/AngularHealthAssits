@@ -16,12 +16,14 @@ import { SingledoctorComponent } from './singledoctor/singledoctor.component';
 import { RatingModule } from 'primeng/rating';
 import { SinglepharmacyComponent } from './singlepharmacy/singlepharmacy.component';
 import { SinglepathologyComponent } from './singlepathology/singlepathology.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { DoctorappointmentComponent } from './doctorappointment/doctorappointment.component';
 
 
 
 
 @NgModule({
-  declarations: [PatientsComponent, DoctorsComponent, PharmacyComponent, PathologyComponent, PatientprofileComponent, HomePatientComponent, SingledoctorComponent, SinglepharmacyComponent, SinglepathologyComponent],
+  declarations: [PatientsComponent, DoctorsComponent, PharmacyComponent, PathologyComponent, PatientprofileComponent, HomePatientComponent, SingledoctorComponent, SinglepharmacyComponent, SinglepathologyComponent, AppointmentComponent, DoctorappointmentComponent],
   imports: [
     CommonModule,
     DataTablesModule,

@@ -23,6 +23,13 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DoctorprofileComponent } from './manage-doctor/doctorprofile/doctorprofile.component';
 import { ManageDietComponent } from './manage-diet/manage-diet.component';
 import { AdddietComponent } from './manage-diet/adddiet/adddiet.component';
+import { ManageMedicineComponent } from './manage-medicine/manage-medicine.component';
+import { ManageDiseaseComponent } from './manage-disease/manage-disease.component';
+import { ManageCityComponent } from './manage-city/manage-city.component';
+import { ManageStateComponent } from './manage-state/manage-state.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { AddusersComponent } from './manage-users/addusers/addusers.component';
+import { AddpatientComponent } from './manage-patient/addpatient/addpatient.component';
 
 
 
@@ -30,7 +37,7 @@ import { AdddietComponent } from './manage-diet/adddiet/adddiet.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, ManagePatientComponent, ManagePharmacyComponent, ManagePathologyComponent, ManageDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, AdddoctorComponent, AddpharmacyComponent, AddpathologyComponent, ManageClinicComponent, AddclinicComponent, DoctorprofileComponent, ManageDietComponent, AdddietComponent],
+  declarations: [AdminComponent, ManagePatientComponent, ManagePharmacyComponent, ManagePathologyComponent, ManageDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, AdddoctorComponent, AddpharmacyComponent, AddpathologyComponent, ManageClinicComponent, AddclinicComponent, DoctorprofileComponent, ManageDietComponent, AdddietComponent, ManageMedicineComponent, ManageDiseaseComponent, ManageCityComponent, ManageStateComponent, ManageUsersComponent, AddusersComponent, AddpatientComponent],
   imports: [
     CommonModule,
     DataTablesModule,

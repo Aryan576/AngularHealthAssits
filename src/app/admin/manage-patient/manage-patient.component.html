@@ -1,7 +1,50 @@
-<app-layout-header></app-layout-header>
-<app-layout-sidebar></app-layout-sidebar>
-<div class="page-wrapper">
+
      <div class="content">
-          <p>Hello patient</p>
+     
+     <div class="row">
+     <div class="col-sm-4 col-3">
+     <p class="page-title" style="font-weight: bold;font-size: 20px;">Patient</p>
      </div>
-</div>
+     <div class="col-sm-8 col-9 text-right m-b-20">
+     <a [routerLink]="['/admin/addpatient']" class="btn btn-primary btn-rounded float-right"><i
+     class="fa fa-plus"></i> Add Patient</a>
+     </div>
+     </div>
+     
+     <br>
+   
+     <table *ngIf="patientlist"  [dtOptions]="dtOptions" datatable class="row-border hover">
+     <thead>
+     <tr>
+     <th>ID</th>
+     <th>UserId</th>
+     <th>Name</th>
+     <th>Gender</th>
+     <th>Phone No</th>
+     <th>Email</th>
+     <th>Age</th>
+     <th>City</th>
+     <th>Pincode</th>
+     
+     </tr>
+     </thead>
+     <tbody>
+     <tr *ngFor="let p of patientlist">
+     <th scope="row">{{p.patientid}}</th>
+     <td>{{p.userid}}</td>
+     <td>{{p.patientname}}</td>
+     <td>{{p.gender}}</td>
+     <td>{{p.phoneno}}</td>
+     <td>{{p.email}}</td>
+     <td>{{p.age}}</td>
+     <td>{{p.cityname}}</td>
+     <td>{{p.pincode}}</td>
+     </tr>
+     </tbody>
+     </table>
+     
+     
+     
+     
+     </div>
+    
