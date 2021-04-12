@@ -55,7 +55,7 @@ const routes: Routes = [
       {path:'editcity/:cityid',component:ManageCityComponent},
       {path:'assignuserpharmacy/:pharmacyid',component:ManagePharmacyComponent},
       {path:'assignuserpathology/:pathologyid',component:ManagePathologyComponent},
-    ],/* canActivate:[AuthGuard]  */
+    ], canActivate:[AuthGuard] 
   }
 ];
 

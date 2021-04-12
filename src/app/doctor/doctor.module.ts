@@ -16,16 +16,19 @@ import { MedicineComponent } from './medicine/medicine.component';
 import { DiseasesComponent } from './diseases/diseases.component';
 import { DietComponent } from './diet/diet.component';
 import { PatientvisitComponent } from './patientvisit/patientvisit.component';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { AdddietComponent } from './diet/adddiet/adddiet.component';
 
 
 @NgModule({
-  declarations: [LayoutHeaderComponent, LayoutSidebarComponent, DoctorComponent, DashboardComponent, DocappintmentComponent, MedicineComponent, DiseasesComponent, DietComponent, PatientvisitComponent],
+  declarations: [LayoutHeaderComponent, LayoutSidebarComponent, DoctorComponent, DashboardComponent, DocappintmentComponent, MedicineComponent, DiseasesComponent, DietComponent, PatientvisitComponent, AdddietComponent],
   imports: [
     CommonModule,
     DataTablesModule,
     FormsModule, ReactiveFormsModule,
     ProgressBarModule,
     RatingModule,
+    ConfirmDialogModule,
   
   
     MDBBootstrapModule.forRoot(),

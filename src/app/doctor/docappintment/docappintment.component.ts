@@ -34,6 +34,7 @@ export class DocappintmentComponent implements OnInit {
     this.Appointment={"appointmentid":value,"statusid":this.statusid=1}
     this.appointmentService.acceptrejectappointment(this.Appointment).subscribe(res => {
           console.log("stauts accpet",res);
+          this.rut.navigateByUrl('./docappointment')
     })
     
   }
@@ -42,6 +43,7 @@ export class DocappintmentComponent implements OnInit {
     this.Appointment={"appointmentid":value,"statusid":this.statusid=2}
     this.appointmentService.acceptrejectappointment(this.Appointment).subscribe(res => {
           console.log("stauts accpet",res);
+          this.rut.navigateByUrl('./docappointment')
     })
   }
 

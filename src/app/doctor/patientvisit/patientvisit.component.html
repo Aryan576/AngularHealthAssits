@@ -1,1 +1,298 @@
-<p>patientvisit works!</p>
+<mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+    <mdb-navbar-brand><a class="navbar-brand" href="#">
+    <h4><b>Patient Information</b></h4>
+    </a></mdb-navbar-brand>
+    
+    
+    <links>
+    
+    
+    <div class="card-box profile-header">
+    
+    <div class="row">
+    <div class="col-md-12">
+    <div class="profile-view">
+    <div class="profile-img-wrap">
+    <div class="profile-img">
+    <a href="#"><img class="avatar" src="assets/img/doctor-03.jpg" alt=""></a>
+    </div>
+    </div>
+    <div class="profile-basic">
+    
+    <div class="row">
+    <div class="col-md-5">
+    <div class="profile-info-left">
+    <h3 class="user-name m-t-0 mb-0">{{prescriptionData.patientname}}</h3>
+    <div class="staff-id">Email ID : {{prescriptionData.email}}</div>
+    <div class="staff-msg"><a href="chat.html">
+    </a></div><br><br>
+    </div>
+    </div>
+    <div class="col-md-7">
+    <ul class="personal-info">
+    <li>
+    <span class="title">Phone:</span>
+    <span class="text"><a href="#">{{prescriptionData.phoneno}}</a></span>
+    </li>
+    <li>
+    <span class="title">Age:</span>
+    <span class="text">{{prescriptionData.age}}</span>
+    </li>
+    <li>
+    <span class="title">Gender:</span>
+    <span class="text">{{prescriptionData.gender}}</span>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    </links>
+    
+    
+    </mdb-navbar>
+    <br><br>
+
+    <!-- Appointment Information -->
+
+<mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+    <mdb-navbar-brand><a class="navbar-brand" href="#">
+    <h4><b>Appointment Information</b></h4>
+    </a></mdb-navbar-brand>
+    
+    
+    <links>
+    
+    <div class="profile-tabs">
+    <div class="tab-content">
+    <div class="tab-pane show active" id="about-cont">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="card-box">
+    <!-- <h4 class="page-title"><b>Appointment Information</b></h4> -->
+    <div class="row">
+    <div class="col-md-5">
+    <div class="profile-info-left">
+    <ul class="personal-info">
+    <li>
+    <span class="title">Create Date:</span>
+    <span class="text"><a href="#">{{prescriptionData.appcreatedate | date:'mediumDate'}}</a></span>
+    </li>
+    <li>
+    <span class="title">Appointment Date:</span>
+    <span class="text">{{prescriptionData.appointMentDate | date:'mediumDate'}}</span>
+    </li>
+    <li>
+    <span class="title">Timing:</span>
+    <span class="text">{{prescriptionData.appointMentTime}}</span>
+    </li>
+    <li>
+    <span class="title">Clinic Name:</span>
+    <span class="text">{{prescriptionData.clinicname}}</span>
+    </li>
+    
+    </ul>
+    </div>
+    </div>
+    <div class="col-md-7">
+    <ul class="personal-info">
+    <li>
+    <span class="title">Reference:</span>
+    <span class="text">{{prescriptionData.reference}}</span>
+    </li>
+    <li>
+    <span class="title">Complain:</span>
+    <span class="text">{{prescriptionData.complain}}</span>
+    </li>
+    <!-- <li>
+    <span class="title">Comment:</span>
+    <span class="text">{{listAppointment[0].comment}}</span>
+    </li> -->
+    
+    </ul>
+    </div>
+    </div>
+    
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    
+    
+    </links>
+    
+    
+    </mdb-navbar>
+    <br><br>
+
+
+
+    <!-- Past Appointment List -->
+
+<mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+    <mdb-navbar-brand><a class="navbar-brand" href="#">
+    <h4><b>Past Appointment List</b></h4>
+    </a></mdb-navbar-brand>
+    
+    
+    <links>
+    
+    
+    <div class="profile-tabs">
+    <div class="tab-content">
+    <div class="tab-pane show active" id="about-cont">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="card-box mb-0">
+    <!-- <h4 class="page-title"><b>Past Appointment List</b></h4> -->
+    <div class="experience-box">
+    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>Patient</th>
+    <th>AppCreateDate</th>
+    <th>Comment</th>
+    <th>Clinic</th>
+    <th>Refrence</th>
+    <th>AppointmentDate</th>
+    <th>AppointmentTime</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- <tr *ngFor="let a of listAppointment">
+    <th scope="row">{{a.appointmentid}}</th>
+    <td>{{a.patientname}}</td>
+    <td>{{a.appcreatedate | date:'mediumDate'}}</td>
+    <td>{{a.comment}}</td>
+    <td>{{a.clinicname}}</td>
+    <td>{{a.reference}}</td>
+    <td>{{a.appointmentdate | date:'mediumDate'}}</td>
+    <td>{{a.appointmenttime}}</td>
+    </tr> -->
+    </tbody>
+    </table>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    
+    </links>
+    
+    
+    </mdb-navbar>
+    <br><br>
+
+
+
+    
+<mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+    <mdb-navbar-brand><a class="navbar-brand" href="#">
+    <h4><b>Detected Disease</b></h4>
+    </a></mdb-navbar-brand>
+    
+    
+    <links>
+    
+    
+    <div class="profile-tabs">
+    <div class="tab-content">
+    <div class="tab-pane show active" id="about-cont">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="card-box mb-0">
+    <!-- <h4 class="page-title"><b>Detected Disease</b></h4> -->
+    <div class="experience-box">
+    <div class="row">
+    <div class="col-sm-4 col-3">
+    
+    </div>
+    <div class="col-sm-8 col-9 text-right m-b-20">
+    <a pButton icon="pi pi-plus" label="Add" style="float: right;color: #fff;"
+    data-toggle="modal" data-target="#myModal"></a>
+    </div>
+    </div>
+    <form [formGroup]="diseaseForm" *ngIf="diseaseForm"
+    (ngSubmit)="diseaseSubmit()">
+    <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    
+    <div class="modal-content">
+    <div class="modal-header">
+    <h4 class="modal-title"><b>Disease Form</b></h4>
+    </div>
+    <div class="modal-body">
+    
+    <div class="form-group">
+    <label>Disease Name</label>
+    <select class="browser-default custom-select mb-4"
+    formControlName="diseaseid">
+    <option value="" selected>Choose Disease
+    </option>
+    <option *ngFor="let d of listDisease"
+    value="{{d.diseaseid}}">
+    {{d.diseasename}}</option>
+    </select>
+    </div>
+    
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-danger"
+    data-toggle="modal" data-dismiss="modal"
+    data-target="#myModal">Close</button>
+    <button type="submit" value="diseasesubmit"
+    class="btn btn-primary" data-toggle="modal"
+    data-target="#myModal">Save</button>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </form>
+    <table  datatable [dtOptions]="dtOptions"
+    class="row-border hover">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>Disease Name</th>
+    </tr>
+    </thead>
+    <!-- <tbody>
+    <tr *ngFor="let ad of listAppointmentDisease">
+    <th scope="row">{{ad.appointmentdiseaseid}}</th>
+    <td>{{ad.diseasename}}</td>
+    </tr>
+    </tbody> -->
+    </table>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    
+    </links>
+    
+    
+    </mdb-navbar>
+    <br><br>

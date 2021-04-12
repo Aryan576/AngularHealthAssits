@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth.guard';
+import { AdddietComponent } from './diet/adddiet/adddiet.component';
 import { DietComponent } from './diet/diet.component';
 import { DiseasesComponent } from './diseases/diseases.component';
 import { DocappintmentComponent } from './docappintment/docappintment.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
     {path:'diet',component:DietComponent},
     {path:'medicine',component:MedicineComponent},
     {path:'diesease',component:DiseasesComponent},
-    {path:'patienproceed/:appointmentid',component:PatientvisitComponent}
+    {path:'patienproceed/:appointmentid',component:PatientvisitComponent},
+    {path:'adddiet',component:AdddietComponent},
 
 
   ],canActivate:[AuthGuard]}
