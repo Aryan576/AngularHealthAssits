@@ -21,8 +21,8 @@
     <span>{{userData.user.firstname}}</span>
     </a>
     <div  class="dropdown-menu">
-    <a class="dropdown-item" href="profile.html">My Profile</a>
-    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+    <a class="dropdown-item" [routerLink]="['/doctorHome/doctorprofile']" >My Profile</a>
+    <a class="dropdown-item" [routerLink]="['/doctorHome/editprofile',userData.user.userid]">Edit Profile</a>
     <a class="dropdown-item" href="settings.html">Settings</a>
     <a class="dropdown-item" (click)="logout()">Logout</a>
     </div>

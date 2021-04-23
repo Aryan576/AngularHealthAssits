@@ -18,10 +18,12 @@ import { DietComponent } from './diet/diet.component';
 import { PatientvisitComponent } from './patientvisit/patientvisit.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { AdddietComponent } from './diet/adddiet/adddiet.component';
+import { DoctorprofileComponent } from './doctorprofile/doctorprofile.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 
 @NgModule({
-  declarations: [LayoutHeaderComponent, LayoutSidebarComponent, DoctorComponent, DashboardComponent, DocappintmentComponent, MedicineComponent, DiseasesComponent, DietComponent, PatientvisitComponent, AdddietComponent],
+  declarations: [LayoutHeaderComponent, LayoutSidebarComponent, DoctorComponent, DashboardComponent, DocappintmentComponent, MedicineComponent, DiseasesComponent, DietComponent, PatientvisitComponent, AdddietComponent, DoctorprofileComponent, EditprofileComponent],
   imports: [
     CommonModule,
     DataTablesModule,

@@ -39,4 +39,19 @@ export class PatientService {
   listUserPatient(userid : any):Promise <any> {
     return this.http.get(`${environment.Base_URL}listUserPatient/${userid}`).toPromise();
   }
+
+
+  addFamilyMember(model :any):Observable<any> {
+    return this.http.post(`${environment.Base_URL}patientprofile`,model);
+  }
+ 
+
+  getFamilyMember(patientid :any):Promise<any> {
+    return this.http.get(`${environment.Base_URL}getFamilyMember/${patientid}`).toPromise();
+  }
+
+  updateFamilyMember(model :any):Observable<any> {
+    return this.http.put(`${environment.Base_URL}updateFamilyMember`,model);
+  }
+
 }

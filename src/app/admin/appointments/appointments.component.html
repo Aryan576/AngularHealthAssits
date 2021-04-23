@@ -1,0 +1,52 @@
+
+    <div class="content">
+        <a pButton icon="pi pi-plus" label="Export" style="float: left;color: #fff;" id="btnExport"
+            value="Export"></a><br><br><br>
+        <table id="tblCustomers" *ngIf="listAllAppointment" datatable [dtOptions]="dtOptions" class="row-border hover">
+            <thead>
+                <tr>
+
+                    <th>Patient</th>
+                    <th>Doctor</th>
+                    <th>Clinic</th>
+                    <th>AppDate</th>
+                    <th>AppTime</th>
+                    <th>Status</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of listAllAppointment">
+                    <td>{{a.patientname}}</td>
+                    <td>{{a.firstname}}&nbsp;{{a.lastname}}</td>
+                    <td>{{a.clinicname}}</td>
+                    <td>{{a.appointMentDate | date:'mediumDate'}}</td>
+                    <td>{{a.appointMentTime}}</td>
+                    <td *ngIf="a.statusid">
+                        <span
+                            class="{{service.appointmentStatus[a.statusid]}}">{{service.appointmentStatus[a.statusid]}}</span>
+                    </td>
+                    <td *ngIf="a.statusid==4">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting...
+                    </td>
+
+                    <td *ngIf="a.statusid==1">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting...
+                    </td>
+
+                    <td *ngIf="a.statusid==7">
+                        &nbsp;&nbsp;&nbsp;&nbsp;Successful...
+                    </td>
+
+                   
+
+                    <td *ngIf="a.statusid==2">
+                        &nbsp;{{a.statusreason}}
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>

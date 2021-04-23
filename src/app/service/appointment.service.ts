@@ -39,6 +39,10 @@ export class AppointmentService {
     return this.http.put(`${environment.Base_URL}accept_reject_Appointment`,model)
   }
 
+  listDoctClinicTiming(clinicid : any):Promise <any> {
+    return this.http.get(`${environment.Base_URL}listDoctClinicTiming/${clinicid}`).toPromise();
+  }
+
 
   /* Patient Visit */
 
@@ -77,4 +81,40 @@ export class AppointmentService {
   listAppointmentDisease():Promise<any> {
     return this.http.get(`${environment.Base_URL}listAppointmentDisease`).toPromise();
   }
+
+  updateRescheduleAppointment(model :any):Observable<any> {
+    return this.http.put(`${environment.Base_URL}updateRescheduleAppointment`,model);
+    }
+
+
+    updateRejectAppointment(model :any):Observable<any> {
+      return this.http.put(`${environment.Base_URL}updateRejectAppointment`,model);
+      }
+
+
+
+    
+rescheduleReason(data : any):Observable<any> {
+  return this.http.get(`${environment.Base_URL}rescheduleReason/`+data.email+"/"+data.appointmentid);
+  }
+
+  rejectReason(data : any):Observable<any> {
+    return this.http.get(`${environment.Base_URL}rejectReason/`+data.email+"/"+data.appointmentid);
+    }
+    
+  listAllAppointment():Promise<any> {
+    return this.http.get(`${environment.Base_URL}listAllAppointment`).toPromise();
+  }
+
+  /* Patient */
+
+  viewPatientAppointment(userid : any):Promise<any> {
+    return this.http.get(`${environment.Base_URL}viewPatientAppointment/${userid}`).toPromise();
+  }
+
+  
+  
+
+
+
 }

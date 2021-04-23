@@ -24,7 +24,7 @@
     <div class="col-sm-6">
     <div class="form-group">
     <label>Clinic</label>
-    <select class="browser-default custom-select mb-4" formControlName="clinicid">
+    <select class="browser-default custom-select mb-4"   (change)="getDoctClinicsByDoctId()" formControlName="clinicid">
     <option value="" selected>Choose Clinic</option>
     <option *ngFor="let c of listClinic" value="{{c.clinicid}}">{{c.clinicname}}</option>
     </select>
@@ -45,7 +45,16 @@
     <div class="col-sm-6">
     <div class="form-group">
     <label>Appoinment Time</label>
-    <input class="form-control" type="time" formControlName="appointMentTime">
+    <select class="browser-default custom-select mb-4" formControlName="appointMentTime">
+        <option value="" selected>Appointment Time</option>
+        <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.mon}}">Monday => {{dc.mon}}</option>
+        <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.tue}}">Tuesday => {{dc.tue}}</option>
+        <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.wed}}">Wednesday => {{dc.wed}}</option>
+        <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.thru}}">Thrusday => {{dc.thru}}</option>
+        <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.fri}}">Friday => {{dc.fri}}</option>
+        <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.sat}}">Saturday => {{dc.sat}}</option>
+        <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.sun}}">Sunday => {{dc.sun}}</option>
+      </select>
     </div>
     </div>
     <div class="col-sm-6">

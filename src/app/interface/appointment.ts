@@ -21,4 +21,9 @@ export interface Appointment {
     phoneno:String;
     gender:String;
     age:number;
+
+    description:String;
+	prescriptiondate:Date;
+	generaladvice:String;
+	followupcomment:String;
 }

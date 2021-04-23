@@ -1,0 +1,115 @@
+<div class="tab-content">
+    <div class="tab-pane show active" id="about-cont">
+  
+      <!-- <form [formGroup]="RescheduleForm" (ngSubmit)="RescheduleSubmit()">
+        <div id="myRescheduleForm" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+  
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title"><b>Reschedule Form</b></h4>
+              </div>
+              <div class="modal-body">
+  
+                <div class="form-group">
+                  <label>Appointment Date</label>
+                  <input class="form-control" type="date" formControlName="appointmentdate">
+                </div>
+  
+                <div class="form-group">
+                  <label>Appointment Time</label>
+                   <input class="form-control" type="time" formControlName="appointmenttime"> 
+                  <select class="browser-default custom-select mb-4" formControlName="appointmenttime">
+                    <option value="" selected>Appointment Time</option>
+                    <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.monday}}">Monday => {{dc.monday}}</option>
+                    <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.tuesday}}">Tuesday => {{dc.tuesday}}
+                    </option>
+                    <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.wednesday}}">Wednesday => {{dc.wednesday}}
+                    </option>
+                    <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.thrusday}}">Thrusday => {{dc.thrusday}}
+                    </option>
+                    <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.friday}}">Friday => {{dc.friday}}</option>
+                    <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.saturday}}">Saturday => {{dc.saturday}}
+                    </option>
+                    <option *ngFor="let dc of listDoctClinicTiming" value="{{dc.sunday}}">Sunday => {{dc.sunday}}</option>
+                  </select>
+                </div>
+  
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal"
+                  data-target="#myRescheduleForm">Close</button>
+                <button type="submit" value="submit" class="btn btn-primary" data-toggle="modal"
+                  data-target="#myRescheduleForm">Save</button>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </form> -->
+  
+  
+    </div>
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <div class="container">
+    <!-- <p-button icon="pi pi-file-pdf" class="p-button-warning p-mr-2" id="btnExport" value="Export" pTooltip="PDF"
+      tooltipPosition="bottom"></p-button> -->
+    <a pButton icon="pi pi-plus" label="Export" style="float: right;color: #fff;" id="btnExport" value="Export"></a>
+  
+    <br><br><br>
+    <table id="tblCustomers" datatable [dtOptions]="dtOptions" class="row-border hover">
+      <thead>
+        <tr>
+          <!-- <th>ID</th> -->
+          <th>Patient</th>
+          <th>Doctor</th>
+          <th>Clinic</th>
+          <th>AppointmentDate</th>
+          <th>AppointmentTime</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of listAppointment">
+          <td>{{a.patientname}}</td>
+          <td>{{a.firstname}}&nbsp;{{a.lastname}}</td>
+          <td>{{a.clinicname}}</td>
+          <td>{{a.appointMentDate | date:'mediumDate'}}</td>
+          <td>{{a.appointMentTime}}</td>
+          <td *ngIf="a.statusid">
+            <span
+              class="{{viewAppointmentService.appointmentStatus[a.statusid]}}">{{viewAppointmentService.appointmentStatus[a.statusid]}}</span>
+          </td>
+          <td *ngIf="a.statusid==4">
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please Wait...
+          </td>
+          <td *ngIf="a.statusid==1">
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please Wait...
+          </td>
+          <td *ngIf="a.statusid==2">
+            
+            &nbsp;Take Appoinment
+          </td>
+          <td class="text-right" *ngIf="a.statusid!=4 && a.statusid!=1">
+              <!-- <a class="dropdown-item" [routerLink]="['/viewprescription',a.appointmentid]" styleClass="p-mr-2"
+                *ngIf="a.statusid==6">
+                <p-button label="Prescription" icon="pi pi-eye"></p-button>
+              </a> -->
+              <button pButton pRipple class="size" class="dropdown-item" [routerLink]="['/patientHome/viewprescription',a.appointmentid]" class="p-button-outlined" styleClass="p-button-sm"
+              *ngIf="a.statusid==7" label="Prescription" icon="pi pi-eye"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>

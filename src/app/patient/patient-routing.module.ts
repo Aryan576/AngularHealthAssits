@@ -11,6 +11,8 @@ import { PharmacyComponent } from './pharmacy/pharmacy.component';
 import { SingledoctorComponent } from './singledoctor/singledoctor.component';
 import { SinglepathologyComponent } from './singlepathology/singlepathology.component';
 import { SinglepharmacyComponent } from './singlepharmacy/singlepharmacy.component';
+import { ViewappointmentComponent } from './viewappointment/viewappointment.component';
+import { ViewprescriptionComponent } from './viewprescription/viewprescription.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,9 @@ const routes: Routes = [
   {path:'patientHome',component:HomePatientComponent,children:[
 
     {path:'patientprofile',component:PatientprofileComponent},
+    {path:'editfamilymember/:patientid',component:PatientprofileComponent},
+    {path:'viewappointment',component:ViewappointmentComponent},
+    {path:'viewprescription/:appointmentid',component:ViewprescriptionComponent},
   {path:'doctor',component:DoctorsComponent},
   {path:'singledoctor/:userid',component:SingledoctorComponent,children:[
     

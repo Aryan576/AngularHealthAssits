@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth.guard';
 import { AdminComponent } from './admin/admin.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
 import { ManageCityComponent } from './manage-city/manage-city.component';
 import { AddclinicComponent } from './manage-clinic/addclinic/addclinic.component';
 import { ManageClinicComponent } from './manage-clinic/manage-clinic.component';
@@ -26,7 +28,9 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
 const routes: Routes = [
     {path:'admin',component:AdminComponent,children:[  
     {path:'doctor',component:ManageDoctorComponent},
+    {path:'dashboard',component:AdmindashboardComponent},
       {path:'patient',component:ManagePatientComponent},
+      {path:'adminappointment',component:AppointmentsComponent},
       {path:'pharmacy',component:ManagePharmacyComponent},
       {path:'pathology',component:ManagePathologyComponent},
       {path:'clinic',component:ManageClinicComponent},

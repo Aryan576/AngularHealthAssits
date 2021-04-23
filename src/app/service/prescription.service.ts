@@ -42,9 +42,6 @@ export class PrescriptionService {
     return this.http.post(`${environment.Base_URL}addAppointmentDisease`,model);
   }
 
-  listAppointmentDisease(appointmentid :any):Promise<any> {
-    return this.http.get(`${environment.Base_URL}listAppointmentDisease/${appointmentid}`).toPromise();
-  }
 
   listDiet():Promise <any> {
     return this.http.get(`${environment.Base_URL}listDiet`).toPromise();
@@ -57,4 +54,28 @@ export class PrescriptionService {
   addDietuser(model : any):Observable<any> {
     return this.http.post(`${environment.Base_URL}addDietUser`,model);
   }
+
+  pastAppointmentList(patientid : any):Promise <any> {
+    return this.http.get(`${environment.Base_URL}pastAppointmentList/${patientid}`).toPromise();
+  }
+
+  listAppointmentDisease(patientid :any):Promise<any> {
+    return this.http.get(`${environment.Base_URL}listAppointmentDisease/${patientid}`).toPromise();
+  }
+  doneappointment(model :any):Observable<any> {
+
+    return this.http.put(`${environment.Base_URL}done_appointment`,model)
+    }
+
+    /* patient */
+
+   
+  
+    listPrescriptionMedicine(appointmentid : any):Promise <any> {
+      return this.http.get(`${environment.Base_URL}listPrescriptionMedicine/${appointmentid}`).toPromise();
+    }
+  
+    
+  
+
 }

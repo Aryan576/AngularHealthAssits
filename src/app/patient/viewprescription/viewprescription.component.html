@@ -1,0 +1,215 @@
+<br>
+<div class="container">
+
+    <a pButton icon="pi pi-plus" label="Export" style="float: right;color: #fff;" id="btnExport" value="Export"></a>
+    <br><br><br>
+
+    <div class="col-md-12" id="tblCustomers">
+        <div class="card">
+            <div class="card-body">
+                <div class="row custom-invoice">
+                    <div class="col-6 col-sm-6 m-b-20">
+                        <img src="assets/img/logo-dark.png" class="inv-logo" alt="">
+                        <ul class="list-unstyled">
+                            <h5><strong>Health Assist</strong></h5>
+                            <!-- <li>3864 Quiet Valley Lane,</li>
+                            <li>Sherman Oaks, CA, 91403</li>
+                            <li>GST No:</li> -->
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm-6 m-b-20">
+                        <div class="invoice-details">
+                            <h3 class="text-uppercase">{{patientData.patientname}}</h3>
+                            <ul class="list-unstyled">
+                                <li>Email: <span>{{patientData.email}}</span></li>
+                                <li>PhoneNo: <span>{{patientData.phoneno}}</span></li>
+                                <li>Gender: <span>{{patientData.gender}}</span></li>
+                                <li>Age: <span>{{patientData.age}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-6 m-b-20">
+
+                        <!-- <h5>Invoice to:</h5> -->
+                         <ul class="list-unstyled">
+                            <li>
+                                <h5><strong>Appointment Details</strong></h5>
+                            </li>
+                            <li>Create Date: <span>{{patientData.appcreatedate | date:'mediumDate'}}</span></li>
+                            <li>Appointment Date: <span>{{patientData.appointMentDate | date:'mediumDate'}}</span></li>
+                            <li>Appointment Time: <span>{{patientData.appointMentTime}}</span></li>
+                            <li>Clinic Name: <span>{{patientData.clinicname}}</span></li>
+                            <li>Reference: <span>{{patientData.reference}}</span></li>
+                            <li>Complain: <span>{{patientData.complain}}</span></li>
+                        </ul>
+
+
+
+                      
+
+
+                    </div>
+                    <div class="col-sm-6 col-lg-6 m-b-20">
+                        <div class="invoices-view">
+                            <!-- <span class="text-muted">Payment Details:</span> -->
+                            <ul class="list-unstyled invoice-payment-details">
+                                <li>
+                                    <h5><strong>Prescription Details</strong></h5>
+                                </li>
+                                <li>Prescription Date: <span>{{patientData.prescriptiondate | date:'mediumDate'}}</span></li>
+                                <li>General Advice: <span>{{patientData.generaladvice}}</span></li><br>
+                                <li>FollowupComment: <span>{{patientData.followupcomment}}</span></li>
+                                <li>Description: <span>{{patientData.description}}</span></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div><br>
+                <h5><strong>Medicine List</strong></h5>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                
+                                <th>Medicine Name</th>
+                                <th>Frequency</th>
+                                <th>Duration</th>
+                                <th>Instruction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pm of listPrescriptionMedicine">
+                           
+                                <td>{{pm.medicinename}}</td>
+                                <td>{{pm.frequency}}</td>
+                                <td>{{pm.duration}}</td>
+                                <td>{{pm.instructions}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br>
+                <h5><strong>Disease List</strong></h5>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <!-- <th>#</th> -->
+                                <th>Disease Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pd of listPatientDisease">
+                                <!-- <th scope="row">{{pd.appointmentdiseaseid}}</th> -->
+                                <td>{{pd.diseasename}}</td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <br>
+                <h5><strong>Diet List</strong></h5>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <!-- <th>#</th> -->
+                                <th>Diet Type</th>
+                                <th>Age Group</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let du of listDietUser">
+                                <!-- <th scope="row">1</th> -->
+                                <td>{{du.diettype}}</td>
+                                <td>{{du.agegroup}}</td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+                <br>
+                <h5><strong>Past Appointment List</strong></h5>
+                <div class="table-responsive">
+                    <table *ngIf="pastAppointmentList" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Patient Name</th>
+                                <th>Clinic Name</th>
+                                <th>Comment</th>
+                                <th>Refrence</th>
+                                <th>Appointment Date</th>
+                                <th>Appointment Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pa of pastAppointmentList">
+                                <td>{{pa.patientname}}</td>
+                                <td>{{pa.clinicname}}</td>
+                                <td>{{pa.comment}}</td>
+                                <td>{{pa.reference}}</td>
+                                <td>{{pa.appointMentDate | date:'mediumDate'}}</td>
+                                <td>{{pa.appointMentTime}}</td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+                <div>
+                    <!-- <div class="row invoice-payment">
+                        <div class="col-sm-7">
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="m-b-20">
+                                <h6>Total due</h6>
+                                <div class="table-responsive no-border">
+                                    <table class="table mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <th>Subtotal:</th>
+                                                <td class="text-right">$262</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Tax: <span class="text-regular">(10%)</span></th>
+                                                <td class="text-right">$26.2</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Total:</th>
+                                                <td class="text-right text-primary">
+                                                    <h5>$288.2</h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invoice-info">
+                        <h5>Other information</h5>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed
+                            dictum ligula, cursus blandit risus. Maecenas eget metus non tellus dignissim aliquam ut a
+                            ex. Maecenas sed vehicula dui, ac suscipit lacus. Sed finibus leo vitae lorem interdum, eu
+                            scelerisque tellus fermentum. Curabitur sit amet lacinia lorem. Nullam finibus pellentesque
+                            libero, eu finibus sapien interdum vel</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

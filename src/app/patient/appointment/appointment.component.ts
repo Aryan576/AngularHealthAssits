@@ -20,6 +20,7 @@ export class AppointmentComponent implements OnInit {
   myDate = new Date();
   listuserPatint:{}
   a:string=""
+  listDoctClinicTiming:{}
   constructor(private service :AppointmentService,private rut: Router,private userdataservice: UserserviceService,private messageService : MessageService) { 
    
   }
@@ -75,6 +76,18 @@ export class AppointmentComponent implements OnInit {
       
     })
     console.log(" lets get all clinic ",docProfileId);
+    
+  }
+
+  getDoctClinicsByDoctId(){
+    var clinicid = this.appointmentForm.value.clinicid 
+    console.log(this.appointmentForm.value.clinicid);
+    this.service.listDoctClinicTiming(clinicid).then(res => {
+      this.listDoctClinicTiming = res.data;
+    console.log("list app time"+res.data);
+    
+    })
+
     
   }
 

@@ -18,18 +18,22 @@ import { SinglepharmacyComponent } from './singlepharmacy/singlepharmacy.compone
 import { SinglepathologyComponent } from './singlepathology/singlepathology.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { DoctorappointmentComponent } from './doctorappointment/doctorappointment.component';
+import { ButtonModule } from 'primeng/button';
+import { ViewappointmentComponent } from './viewappointment/viewappointment.component';
+import { ViewprescriptionComponent } from './viewprescription/viewprescription.component';
 
 
 
 
 @NgModule({
-  declarations: [PatientsComponent, DoctorsComponent, PharmacyComponent, PathologyComponent, PatientprofileComponent, HomePatientComponent, SingledoctorComponent, SinglepharmacyComponent, SinglepathologyComponent, AppointmentComponent, DoctorappointmentComponent],
+  declarations: [PatientsComponent, DoctorsComponent, PharmacyComponent, PathologyComponent, PatientprofileComponent, HomePatientComponent, SingledoctorComponent, SinglepharmacyComponent, SinglepathologyComponent, AppointmentComponent, DoctorappointmentComponent, ViewappointmentComponent, ViewprescriptionComponent],
   imports: [
     CommonModule,
     DataTablesModule,
     FormsModule, ReactiveFormsModule,
     ProgressBarModule,
     RatingModule,
+    ButtonModule,
   
   
     MDBBootstrapModule.forRoot(),

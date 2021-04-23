@@ -30,6 +30,8 @@ import { ManageStateComponent } from './manage-state/manage-state.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AddusersComponent } from './manage-users/addusers/addusers.component';
 import { AddpatientComponent } from './manage-patient/addpatient/addpatient.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
 
 
 
@@ -37,7 +39,7 @@ import { AddpatientComponent } from './manage-patient/addpatient/addpatient.comp
 
 
 @NgModule({
-  declarations: [AdminComponent, ManagePatientComponent, ManagePharmacyComponent, ManagePathologyComponent, ManageDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, AdddoctorComponent, AddpharmacyComponent, AddpathologyComponent, ManageClinicComponent, AddclinicComponent, DoctorprofileComponent, ManageDietComponent, AdddietComponent, ManageMedicineComponent, ManageDiseaseComponent, ManageCityComponent, ManageStateComponent, ManageUsersComponent, AddusersComponent, AddpatientComponent],
+  declarations: [AdminComponent, ManagePatientComponent, ManagePharmacyComponent, ManagePathologyComponent, ManageDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, AdddoctorComponent, AddpharmacyComponent, AddpathologyComponent, ManageClinicComponent, AddclinicComponent, DoctorprofileComponent, ManageDietComponent, AdddietComponent, ManageMedicineComponent, ManageDiseaseComponent, ManageCityComponent, ManageStateComponent, ManageUsersComponent, AddusersComponent, AddpatientComponent, AdmindashboardComponent, AppointmentsComponent],
   imports: [
     CommonModule,
     DataTablesModule,

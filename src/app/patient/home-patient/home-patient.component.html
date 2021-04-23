@@ -56,7 +56,9 @@
             </a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" [routerLink]="['./patientprofile']"><mdb-icon fas icon="user-alt"></mdb-icon>&nbsp;My Profile</a>
-                <a class="dropdown-item" href="edit-profile.html"><mdb-icon fas icon="user-edit"></mdb-icon>&nbsp;Edit Profile</a>
+                <a class="dropdown-item" [routerLink]="['./viewappointment']">
+                  <mdb-icon fas icon="eye"></mdb-icon>&nbsp;Appointment
+                </a>
                 <!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
                 <a class="dropdown-item"  (click)="logout()"><mdb-icon fas icon="power-off"></mdb-icon>&nbsp;Logout</a>
             </div>

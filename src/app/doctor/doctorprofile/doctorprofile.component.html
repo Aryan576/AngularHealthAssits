@@ -1,0 +1,82 @@
+
+
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-7 col-6">
+                <h4 class="page-title">My Profile</h4>
+            </div>
+
+            
+        </div>
+        <div class="card-box profile-header">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="profile-view">
+                        <div class="profile-img-wrap">
+                            <div class="profile-img">
+                                <a href="#"><img class="avatar" src="/assets/images/Home/profile_doctor.JPG" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="profile-basic">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="profile-info-left">
+                                        <h3 class="user-name m-t-0 mb-0">
+                                            {{DoctorProfileData.firstname}}&nbsp;{{DoctorProfileData.lastname}}</h3>
+                                        <small class="text-muted">{{DoctorProfileData.specialization}}</small>
+                                        <div class="staff-id">Register No : {{DoctorProfileData.registerationno}}
+                                        </div>
+                                        <br><br><br>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <ul class="personal-info">
+                                        <li>
+                                            <span class="title">Qualification:</span>
+                                            <span class="text"><a
+                                                    href="#">{{DoctorProfileData.qualification}}</a></span>
+                                        </li>
+                                        <li>
+                                            <span class="title">Email:</span>
+                                            <span class="text"><a href="#">{{DoctorProfileData.email}}</a></span>
+                                        </li>
+                                        <li>
+                                            <span class="title">Experience:</span>
+                                            <span class="text">{{DoctorProfileData.experience}}</span>
+                                        </li>
+                                        <!-- <li>
+                                            <span class="title">statusReason:</span>
+                                            <span class="text">{{DoctorProfileData.statusReason}}</span>
+                                        </li> -->
+                                        <li>
+                                            <span class="title">Gender:</span>
+                                            <span class="text">{{DoctorProfileData.gender}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-tabs">
+
+            <div class="tab-content">
+                <div class="tab-pane show active" id="about-cont">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card-box">
+                                <h4 class="page-title"><b>About</b></h4>
+                                <div class="experience-box">
+                                    <p>{{DoctorProfileData.about}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

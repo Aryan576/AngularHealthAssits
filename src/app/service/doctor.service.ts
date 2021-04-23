@@ -67,6 +67,30 @@ export class DoctorService {
       }
 
 
+      /* DashBorad */
+      todayAppointment(userid : any):Promise<any> {
+        return this.http.get(`${environment.Base_URL}todayAppointment/${userid}`).toPromise();
+      }
+      
+      waitForAcceptAppointment(userid : any):Promise<any> {
+        return this.http.get(`${environment.Base_URL}waitForAcceptAppointment/${userid}`).toPromise();
+      }
+    
+      acceptAppointment(userid : any):Promise<any> {
+        return this.http.get(`${environment.Base_URL}acceptAppointment/${userid}`).toPromise();
+      }
+    
+      rescheduleAppointment(userid : any):Promise<any> {
+        return this.http.get(`${environment.Base_URL}rescheduleAppointment/${userid}`).toPromise();
+      }
+    
+      doneAppointment(userid : any):Promise<any> {
+        return this.http.get(`${environment.Base_URL}doneAppointment/${userid}`).toPromise();
+      }
+    
+      listDoctClinic(userid : any):Promise <any> {
+        return this.http.get(`${environment.Base_URL}listDoctClinic/${userid}`).toPromise();
+      }
 
     
 }
