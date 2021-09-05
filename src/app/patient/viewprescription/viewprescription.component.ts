@@ -25,7 +25,7 @@ export class ViewprescriptionComponent implements OnInit {
    
     this.id = this.route.snapshot.params.appointmentid;
 
-    this.viewPrescriptionService.getAppointmentByid(this.id).then(res => {
+    this.viewPrescriptionService.getPatientDetails(this.id).then(res => {
       this.patientData = res.data;
        console.log(res.data);
       
@@ -45,26 +45,12 @@ export class ViewprescriptionComponent implements OnInit {
 
     this.viewPrescriptionService.listPrescriptionMedicine(this.id).then(res => {
       this.listPrescriptionMedicine = res.data;
+      console.log(this.listPrescriptionMedicine);
+      
     })
 
-    if (this.userdataservice.user.email.length != 0) {
-
-      this.isLog = true;
-
-    } else {
-      this.isLog = false;
-    }
   }
-  logout() {
-    this.userdataservice.user = null
-    console.log("logout successfully...!!");
-
-    this.isLog = false;
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: "Logout Successfully...!!" });
-    this.rut.navigateByUrl('');
-  }
-  counter(i: number) {
-    return new Array(i);
-}
+  
+  
 
 }

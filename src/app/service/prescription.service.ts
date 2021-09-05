@@ -74,6 +74,9 @@ export class PrescriptionService {
     listPrescriptionMedicine(appointmentid : any):Promise <any> {
       return this.http.get(`${environment.Base_URL}listPrescriptionMedicine/${appointmentid}`).toPromise();
     }
+    getPatientDetails(appointmentid :any):Promise<any> {
+      return this.http.get(`${environment.Base_URL}getPatientDetails/${appointmentid}`).toPromise();
+    }
   
     
   
